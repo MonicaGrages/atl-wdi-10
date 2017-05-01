@@ -321,7 +321,7 @@ a.  What are some possible entities that your application might use to model its
 
   > Answer here
   1. player: name, piece (X's or O's), score
-  2. game: players, moves remaining, winner
+  2. game status: players, moves remaining, winner
 
 b.  How might those entities be represented in JavaScript code?
 
