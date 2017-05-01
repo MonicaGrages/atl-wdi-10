@@ -44,6 +44,12 @@ var resSeven;
 while (resSeven < 95) {
   resSeven = resSeven + 12;
 }
+while (resSeven > 105) {
+  resSeven = resSeven - 7;
+}
+while (resSeven >= 95 && resSeven <= 105) {
+  return;
+}
 
 // 8. Write a `for` loop that counts from 0 (inclusive) to 1857 (exclusive) and
 //    calculates the sum of all of those numbers, storing the result in the
@@ -57,8 +63,8 @@ for (i = 0; i < 1857; i++) {
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
 var resNine;
-for () {
-
+for (i = 0; i < 1000; i + 7) {
+  resNine = i * i;
 }
 
 // 10. For numbers 1-10, calculate n^n and then store the sum of all of these values in the variable `resTen`.

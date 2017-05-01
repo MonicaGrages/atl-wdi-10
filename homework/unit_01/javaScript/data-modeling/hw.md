@@ -62,6 +62,18 @@ keep them organized.
 
 > Answer here
 
+>var project = {
+>  numberOfTasks: 3;
+>  deadline: "tomorrow",
+>
+>}
+
+var task = {
+  status: "completed",
+  priority: 1;
+  hrsToComplete: 2;
+}
+
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
