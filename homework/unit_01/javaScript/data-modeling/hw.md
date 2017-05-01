@@ -62,23 +62,47 @@ keep them organized.
 
 > Answer here
 
->var project = {
->  numberOfTasks: 3;
->  deadline: "tomorrow",
->
->}
+var project = {
+  numberOfTasks: 3;
+  deadline: "tomorrow",
+  team: ["Monica", "Maren", "Sarah"]
+}
 
 var task = {
   status: "completed",
-  priority: 1;
-  hrsToComplete: 2;
+  priority: 1,
+  hrsToComplete: 2,
+  pointPerson: "Monica"
 }
+
+The project entity/object could be defined by the number of tasks that make up the project,
+when the project is due, and what team members are responsible for it. The tasks
+themselves contain information about whether they have been completed yet, what priority
+level they are, how long it will take to complete them, and the point person for the task.
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
 > Answer here
+
+var album = {
+  photos: ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"],
+  owner: "Monica",
+  peopleInPhotos: ["Monica", "Peter", "Fisher"],
+  numberOfLikes: 100
+}
+Some of the properties that would be needed to define the album object would include the
+photos themselves, the user who created the album, the people tagged in the photos, and
+the number of likes.
+
+var user = {
+  username: "Monica",
+  friends: ["Peter", "Maren", "Danny"],
+  numberOfPhotos: 50;
+}
+The user object contains information about a user of the app, including their username,
+the people they are connected with on the app, and the number of photos they have uploaded.
 
 ### 3. Home Automation Manager
 
@@ -88,6 +112,19 @@ information to turn on and off different lights and adjust the thermostat up
 and down.
 
 > Answer here
+var house = {
+  owner: "Monica",
+  lights: "off",
+  temperature: "77",
+  television: "on"
+}
+The house object contains information about a specific house the app manages.
+
+var sensors = {
+  locationsInHouse: ["light switch", "thermostat", "television"],
+  status: "connected"
+}
+This object describes the sensors present in the house used by the home automation system.
 
 ### 4. Sneaker Store
 
@@ -96,6 +133,19 @@ case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
 > Answer here
+var cart = {
+  numberOfItems: 3,
+  itemTypes: ["sneakers", "sandals", "hat"],
+  totalPrice: 150,
+  orderStatus: "completed"
+}
+
+var item = {
+  type: "shoe",
+  style: "sneaker",
+  size: 9,
+  color: "blue"
+}
 
 ## Representing Abstractions in Code
 
@@ -152,6 +202,8 @@ var exampleLine = {
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
 > Answer here
+Advantages: nice to read
+Disadvantages: the set of stations each Rail Line hits could be better accessed/listed if in an array
 
 ### 6. Doctor Appointment App
 
@@ -255,6 +307,8 @@ other? Are there any circumstances in which the other representation might be
 the better choice?
 
 > Answer here
+Option 1: Repeats some information but thoroughly describes the relationships between the different variables.
+Option 2: More succint but not as complete in terms of describing relationships between the different variables.
 
 ## Tying It Together
 
@@ -266,12 +320,32 @@ a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
   > Answer here
+  1. player: name, piece (X's or O's), score
+  2. game: players, moves remaining, winner
 
 b.  How might those entities be represented in JavaScript code?
 
   > Answer here
+  var player = {
+    name: "Monica",
+    piece: "X",
+    score: 1
+  }
+
+  var gameStatus = {
+    players: ["Monica", "Peter"],
+    squaresRemaining: 0,
+    winner: "Monica"
+  }
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
   > Answer here
+  Two important entities in a tic-tac-toe game are the players and the status
+  of the game. For each player, we need to know their name, if they are using
+  X's or O's, and what their score is. The status of the game is defined by who
+  the players are, how many moves are remaining, and who the winner is.
+
+
+  Comfort Score: 3/5
