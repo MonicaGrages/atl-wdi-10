@@ -19,7 +19,7 @@ edited:
 - Describe the Document Object Model (DOM)
 - Open and describe the components of the Chrome developer tools
 - Use the developer tools to manipulate page elements (HTML/CSS)
-- Start to learn how to debug their code
+- Start to learn how to debug your code
 
 ### Preparation
 *Before this lesson, students should already be able to:*
@@ -32,7 +32,7 @@ edited:
 
 ## What are Dev Tools? – Intro
 
-One of the most important traits a developer can have is an inner Sherlock Homes. A developer needs to be a world class detective. Always having an eye/interest in looking deeper, under the surface, and for solving the problem.
+One of the most important traits a developer can have is an inner Sherlock Homes. A developer needs to be a world class detective- to always have an eye/interest in looking deeper, under the surface, for solving the problem.
 
 ![](http://cdn2.hubspot.net/hub/485203/file-2549982505-jpg/blog-files/sherlock_holmes_questionmark_white_bg-289x300.jpg) 
 
@@ -66,11 +66,11 @@ If you forget these commands, you can always go to *View > Developer > Developer
 
 ### DevTools Tabs
 
-Overall, there are eight main tools available in the Developer Tools. You may see other people's DevTools with a few more, as you can add custom ones using chrome extensions.
+Overall, there are eight main tools available in the Developer Tools. You may see other people's DevTools with a few more, as you can add custom tools via chrome extension.
 
-We won't use all of these tabs during this course, the key tabs that we will become familiar with are:
+We won't use all of these tabs during this course. The **key** tabs that we will become familiar with are:
 
-- **Elements** - Where you can examine the rendered code/edit the CSS and the DOM
+- **Elements** - Where you can examine the rendered html/edit the CSS and the DOM
 - **Network** - Where you see the results of your network requests and evaluate network performance
 - **Console** - The JavaScript Console - where you write/test out code
 
@@ -91,7 +91,7 @@ Let's go ahead and play around with some of these tools.
 
 ### Modifying CSS On-the-Fly
 
-The Chrome DevTools have made it very easy to quickly test and edit the CSS before incorporating it back into your application. On [http://generalassemb.ly](http://generalassemb.ly) do the following:
+The Chrome DevTools have made it very easy to quickly test and edit the CSS before incorporating it back into your application. On [http://jezebel.com/](http://jezebel.com/) do the following:
 
 - Press `command(⌘) + option + i` to open the inspector view
   - You can open the DevTools with any shortcut that you like, then press the square with the arrow on the top left corner of the tools section.
@@ -99,22 +99,21 @@ The Chrome DevTools have made it very easy to quickly test and edit the CSS befo
 - Look at the DOM nodes on the left-hand side and select the `body`
 - Look at the CSS responsible for a rendered element in the browser
 
-When you are sure that you have the body selected, in the CSS live-editor on the right, change the CSS property `background-color` value to `red` by clicking on it:
+When you are sure that you have the body selected, in the CSS live-editor on the right, change the CSS property `background` value to `red` by clicking on it:
 
 ```css
 body {
-    background-color: red;
-    ...
+    background: red;
 }
 ```
 
-What happened? When we have are looking at CSS via the DOM, we are able to do whatever we want to change it!  But remember that if you refresh the page, everything will render in the way that it was originally intentioned/you will lose your changes!  Your browser will have sent a new request and received a new response back - aka the default CSS files and folders associated with the `generalassemb.ly` endpoint.
+What happened? When we have are looking at CSS via the DOM, we are able to do whatever we want to change it!  But remember that if you refresh the page, everything will re-render in the way that it was originally intentioned and you will lose your changes!  Your browser will have sent a new request and received a new response back - aka the default HTML + CSS files and folders associated with the `jezebel` endpoint.
 
 A few other things to try:
 
 - Notice that as you start typing background, the css properties autocomplete.
 - After choosing your color, a little colored box will show up (if Chrome recognizes the color that you typed).
-- If you press `SHIFT` and click on the colored box, you can see that the color changes format RGBA, Hex, etc.
+- If you press `SHIFT` and click on the colored box, you can see that the color changes format rgb, hex, etc.
 - If you click on the colored box, you will also see a color selector.
 - If you click on the color you will also get a color selector!
 
@@ -125,7 +124,7 @@ Pretty sweet, eh?
 ![You Do](http://i.imgur.com/ylb6WX9.gif)
 
 ### YOU DO - Alter the GA logo (5m)
-- Inspect the General Assemb.ly logo in the top left corner and change the image to an image of your choosing (from somewhere on the internet)
+- Go to the [General Assemb.ly site](https://generalassemb.ly/).  Inspect the General Assemb.ly logo in the top left corner and change the image to an image of your choosing (from somewhere on the internet)
 - Change the values of the logo margin to make the image fit
 - Change the font-family of the first `h1` on the page to Arial and the font-color to red
 
@@ -137,7 +136,7 @@ The goal of this exercise is to try to get you comfortable editing and manipulat
 
 ### YOU DO (2 min)
 
-- Change the text of the first `h1` on the page to "Hello, WDI ATL 10!".
+- Change the text of the first `h1` on the page to "WDI ATL 10 gets down with Chrome Dev Tools!".
 - If you finish with this task, experiment with what else you can manipulate on the page.
 
 <br />
@@ -166,7 +165,7 @@ Lastly, let's have a look at the console tab (practice the shortcut – `⌘ + o
 The **JavaScript Console** provides two primary ways for developers to test web pages and applications:
 
 1. Log diagnostic information in the development process using the [Console API](https://developer.chrome.com/devtools/docs/console-api)
-  - This is where console.log comes from.
+**This is where console.log comes from.**
 2. A shell prompt, which can be used to interact with the document and the DevTools.
 
 When we write JavaScript that we intend to have processed in a browser, we can use commands like `console.log()` to log values from our JavaScript straight to this tab, as the code executes. This is immensely helpful when we are trying to figure out if certain values are being retrieved or passed between functions. We will use this feature/statement **a lot** in the coming weeks.

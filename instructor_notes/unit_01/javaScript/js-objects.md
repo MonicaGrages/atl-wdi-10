@@ -70,7 +70,7 @@ Objects in JavaScript **always** have properties associated with them.
 
 You can think of a property on a JavaScript object as a type of variable that contains a value. The properties of an object can be accessed using **dot notation** or **bracket notation** which will be discussed in a minute:
 
-##### Bracket Notation
+##### Dot Notation
 
 ```javascript
 var person = {
@@ -304,6 +304,7 @@ We will continue to use JavaScript objects every day, and you will have plenty o
 
 ##### Exercise Solution
 
+```javascript
 var cinque_terre = {
   city: "Cinque Terre",
   country: "Italy",
@@ -321,3 +322,4 @@ var oaxaca = {
     console.log('I would love to go to ' + this.city + ', ' + this.country + '. And learn a phrase other than ' + this.local_phrase );
   }
 }
+```
