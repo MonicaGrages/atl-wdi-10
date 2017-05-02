@@ -40,15 +40,37 @@ numsGreaterThanTen([30, 20, 10, 0]);
 //         `false` otherwise
 // Edge Case: If the input array is empty, the function should return `true`.
 var allGreaterThanTen = function(numsArray){
-
+  if (numsArray.length === 0) {
+    return true;
+  }
+  var numbersGreaterThanTen = [];
+  for (var i=0; i < numsArray.length; i++) {
+    if (numsArray[i] <= 10) {
+      numbersGreaterThanTen.push(numsArray[i]);
+    }
+  }
+  if (numbersGreaterThanTen.length === 0) {
+    areTheyAllGreaterThanTen = true;
+  } else {
+    areTheyAllGreaterThanTen = false;
+  }
+return areTheyAllGreaterThanTen;
 };
+allGreaterThanTen([25, 5, 12]);
 
 // #4
 // Input: an array of words
 // Output: an array of all words from the first array with five or more letters
 var wordsWithAtLeastFiveLetters = function(words){
-  // Your Code Here
+var arrayOfWordsWithAtLeastFiveLetters = [];
+for (i=0; i<words.length; i++) {
+  if (words[i].length >= 5) {
+    arrayOfWordsWithAtLeastFiveLetters.push(words[i]);
+  }
+}
+return arrayOfWordsWithAtLeastFiveLetters;
 };
+wordsWithAtLeastFiveLetters(["tomato", "peas", "watermelon", "lemon", "kiwi"]);
 
 // #5
 // Input: an array of words
@@ -56,8 +78,18 @@ var wordsWithAtLeastFiveLetters = function(words){
 //          `false` otherwise
 // Edge Case: If the array is empty, the function should return `true`.
 var allStartingWithA = function(words){
-  // Your Code Here
+  if (words.length === 0) {
+    return true;}
+  for (i=0; i<words.length; i++) {
+    words[i].toLowerCase();
+    if ((words[i])[0] !== "a") {
+      return false;
+    } else {
+     return true;
+   }
+  }
 };
+allStartingWithA(["apple", "Anna", "ants", "art"]);
 
 // #6
 // Input: an array of words
