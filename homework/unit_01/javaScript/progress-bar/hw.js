@@ -10,6 +10,10 @@ var timerUI = {
   },
   drawProgressBars: function(timerValue){
     // Your Code Here
+    var progressBarPercent = 100 - timerValue;
+    console.log("progressBarPercent = "+progressBarPercent);
+    var progressBarClass = document.querySelector(".progress-bar");
+    progressBarClass.style.width = progressBarPercent+"%";
 
   },
   drawLitFuses: function(timerValue){
