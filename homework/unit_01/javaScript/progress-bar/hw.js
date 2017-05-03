@@ -11,15 +11,25 @@ var timerUI = {
   drawProgressBars: function(timerValue){
     // Your Code Here
     var progressBarPercent = 100 - timerValue;
-    console.log("progressBarPercent = "+progressBarPercent);
     var progressBarClass = document.querySelector(".progress-bar");
     progressBarClass.style.width = progressBarPercent+"%";
 
   },
   drawLitFuses: function(timerValue){
     // Your Code Here
+    var percentBurnt = 100 - timerValue;
+    var percentLeftToBurn = timerValue;
+    var burntBar = document.querySelector(".burnt");
+    var unburntBar = document.querySelector(".unburnt");
+    unburntBar.style.width = (percentLeftToBurn-2)+"%";
+    burntBar.style.width = (percentBurnt)+"%";
+
   },
   drawCrawlers: function(timerValue){
     // Your Code Here
+    var percentCrawled = 100 - timerValue;
+    var percentLeftToCrawl = timerValue;
+
+
   }
 };
