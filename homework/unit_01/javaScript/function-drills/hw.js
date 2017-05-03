@@ -106,8 +106,20 @@ allStartingWithA(["apple", "Anna", "ants", "art"]);
 // Output: `true` if there are ANY words that start with the letter 'b'
 //          (case-insensitive), `false` otherwise
 var anyStartingWithB = function(words){
-  // Your Code Here
+  for (i = 0; i < words.length; i++) {
+    if (words[i][0] === "b") {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 };
+anyStartingWithB(["bananas", "tacos", "strawberry"]);
+
+
+
+
 
 // #7
 // Input: a single word and a number (`n`)
@@ -116,24 +128,122 @@ var anyStartingWithB = function(words){
 //    Assume that vowels are 'a', 'e', 'i', 'o', and 'u' (NOT 'y')
 // Edge Case: If `n` is less than zero, return `null`.
 var hasAtLeastNVowels = function(word, n){
-  // Your Code Here
+  if (n < 0) {
+    return null;
+  } else {
+    numberOfVowels = 0;
+    word = word.toLowerCase();
+    for (var i =0; i < word.length; i++) {
+      switch (word[i]) {
+      case "a" :
+        numberOfVowels ++;
+        break
+      case "e" :
+        numberOfVowels ++;
+        break;
+      case "i" :
+        numberOfVowels ++;
+        break;
+      case "o" :
+        numberOfVowels ++;
+        break;
+      case "u" :
+        numberOfVowels ++;
+        break;
+      }
+    }
+    if (numberOfVowels >= n) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
+hasAtLeastNVowels("watermelon", 3);
+
+
+
+
 
 // #8
 // Input: an array of words
 // Output: an array of words from the original array that have at least two
 //          vowels
 var wordsWithAtLeastTwoVowels = function(words){
-  // Your Code Here
+  var newArrayOfWordsWithAtLeastTwoVowels = [];
+  for (var i = 0; i < words.length; i++) {
+    var numberOfVowels = 0;
+    for (var j = 0; j < words[i].length; j++) {
+      switch (words[i][j]) {
+        case "a" :
+          numberOfVowels++;
+          break;
+        case "e" :
+          numberOfVowels++;
+          break;
+        case "i" :
+          numberOfVowels++;
+          break;
+        case "o" :
+          numberOfVowels++;
+          break;
+        case "u" :
+          numberOfVowels++;
+          break;
+      }
+    }
+    if (numberOfVowels >= 2) {
+      newArrayOfWordsWithAtLeastTwoVowels.push(words[i]);
+    }
+  }
+  return newArrayOfWordsWithAtLeastTwoVowels;
 };
+wordsWithAtLeastTwoVowels(["dogs", "mermaid", "cat", "banana"]);
+
+
+
+
+
 
 // #9
 // Input: an array of words
 // Output: `true` if ALL words have two or more vowels, `false` otherwise
 // Edge Case: If the array is empty, the function should return `true`.
 var allHaveAtLeastTwoVowels = function(words){
-  // Your Code Here
+    for (var i = 0; i < words.length; i++) {
+      var numberOfVowels = 0;
+      words[i].toLowerCase();
+      for (var j = 0; j < words[i].length; j++) {
+        switch (words[i][j]) {
+          case "a" :
+            numberOfVowels++;
+            break;
+          case "e" :
+            numberOfVowels++;
+            break;
+          case "i" :
+            numberOfVowels++;
+            break;
+          case "o" :
+            numberOfVowels++;
+            break;
+          case "u" :
+            numberOfVowels++;
+            break;
+        }
+      }
+      if (numberOfVowels < 2) {
+          return false;
+      }
+    }
+    return true;
 };
+allHaveAtLeastTwoVowels(["cat"]);
+
+
+
+
+
 
 // #10
 // Input: an array of words
