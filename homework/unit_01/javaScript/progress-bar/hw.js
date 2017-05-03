@@ -5,9 +5,12 @@
 var timerUI = {
   drawNumericDisplay: function(timerValue){
     // Your Code Here
+    var numericDisplay = document.getElementById("numeric-display");
+    numericDisplay.innerHTML = timerValue;
   },
   drawProgressBars: function(timerValue){
     // Your Code Here
+
   },
   drawLitFuses: function(timerValue){
     // Your Code Here

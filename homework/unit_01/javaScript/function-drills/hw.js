@@ -329,9 +329,11 @@ var buildObjectFromWords = function(words){
   //create variable for length of each word and set to 0
   //for each character in words[i] increment counter
   //set length counter variable equal to object.key property?
-  function newObjectFromWords () = {};
+  newObjectFromWords = {};
   for (var i=0; i < words.length; i++) {
-
+    function newObjectFromWords(words[i]) {
+      this.newProperty = words[i];
+    }
   }
 };
 
