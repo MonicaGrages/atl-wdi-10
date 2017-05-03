@@ -103,19 +103,25 @@ Each group will have 20 minutes to prepare a short explanation / demo of their a
 - touch main.css
 - subl .
 
-#### In your index.html
+#### In your index.html, add the html below:
 
 ```
 <!DOCTYPE>
 <html>
     <head>
         <title>CSS Animations</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="main.css" />
     </head>
     <body>
-        <div class="square"></div>
+        <main class="container">
+          <div class="square"></div>
+        </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="script.js"></script>
     </body>
 </html>
@@ -125,6 +131,7 @@ Each group will have 20 minutes to prepare a short explanation / demo of their a
 
 ```css
 .square {
+    margin-top: 40px;
     width: 200px;
     height: 200px;
     background: crimson; /* initial state */
@@ -184,6 +191,7 @@ Next, add a transition property:
 
 ```css
 .square {
+    margin-top: 40px;
     width: 200px;
     height: 200px;
     background: crimson; /* initial state */
@@ -210,6 +218,7 @@ Next, add a transition property:
 
 ```css
 .square {
+    margin-top: 40px;
     width: 200px;
     height: 200px;
     background: crimson; /* initial state */
@@ -225,13 +234,15 @@ Next, add a transition property:
 
 ![](http://i.imgur.com/ylb6WX9.gif)
 
-##### In that same index.html
+##### in the index.html, in the main container, under your previous squares, add the html below:
 
 1. Create a 100px by 100px square box that has a background color of tomato, with a class of `square2`.
+
 2. Write a CSS rule that will transition your div from this initial state:
 
 ```css
 .square2 {
+    margin-top: 50px;
     width: 100px;
     height: 100px;
     background: tomato;
@@ -250,6 +261,7 @@ Next, add a transition property:
 
 ```css
 .square2 {
+    margin-top: 50px;
     width: 100px;
     height: 100px;  
     background: tomato;
@@ -323,6 +335,7 @@ The [transform](https://www.w3schools.com/cssref/css3_pr_transform.asp) property
 
 ```css
 .square {
+    margin-top: 50px;
     width: 200px;
     height: 200px;
     background-color: crimson; /* initial state */
@@ -436,11 +449,12 @@ If you know the math, you can write your own transformation matrix
 
 ```css
 .square {
-  width: 200px;
-  height: 200px;
-  background-color: crimson;
-  transform: translateX(0); /* start state */
-  transition-property: background-color, transform; /* make sure to add transform here */    
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: crimson;
+    transform: translateX(0); /* start state */
+    transition-property: background-color, transform; /* make sure to add transform here */    
 }
 
 .square:hover {
@@ -526,20 +540,6 @@ Transitions are great for going from one state to another, but sometimes you nee
 ```
 > Note, remember that for production, `translate` will be faster than `left`, `top`, etc.
 
-<!-- #### Assign the animation to a rule and give it a duration
-
-```css
-.square2 {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: relative;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-}
-``` -->
-
 <br />
 
 #### Additional properties:
@@ -588,6 +588,7 @@ Transitions are great for going from one state to another, but sometimes you nee
 
 ```css
 .square2 {
+    margin-top: 50px;
     width: 100px;
     height: 100px;
     background-color: red;
@@ -660,7 +661,7 @@ jQuery has some simple animation methods like [fadeIn()](https://www.w3schools.c
 <!-- Let's try this in Codepen.io (make sure to include the jQuery library under Settings -> Quick Add). -->
 <br />
 
-1. in your index.html:
+1. in the index.html, in the main container, under your previous squares, add the html below:
 
 ```html
 <div class="square3"></div>
@@ -670,6 +671,7 @@ jQuery has some simple animation methods like [fadeIn()](https://www.w3schools.c
 
 ```css
 .square3 {
+    margin-top: 50px;
     height: 100px;
     width: 100px;
     padding: 10px;
@@ -695,67 +697,69 @@ Here are some [common jQuery effects](http://www.w3schools.com/jquery/jquery_ref
  You can accomplish a lot of the CSS animation code from above using 
 [animate()](https://www.w3schools.com/jquery/jquery_animate.asp). The jQuery animate() method is used to create custom animations.
 
-**Syntax**
-<rb />
-`$(selector).animate({params},speed,callback);`
+##### Basic Syntax
+- `$(selector).animate({params},speed,callback);`
+
 - **params**- required params parameter defines the CSS properties to be animated
 - **speed**- speed parameter specifies the duration of the effect. 
     - slow
     - fast
     - milliseconds
+
 - **callback parameter**- a function to be executed after the animation completes
 
 Here is an example:
  
-1. in the index.html:
+1. in the index.html, in the main container, under your previous squares, add the html below:
 
 ```html
-<!DOCTYPE>
-<html>
-  <head>
-    <title>Box colors</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-  </head>
-  <body>
-    <div class="container">
-        <div id="box1">BOX 1</div>
-        <div id="box2">BOX 2</div>
-    </div>
-    <div class="controlButtons">
-        <button type="button">Toggle</button>
-    </div>
-    <script src="script.js"></script>
-  </body>
-</html>
+<div class="square4"></div>
+
+<div class="controlButtons">
+    <button type="button">Toggle</button>
+</div>
 ```
 
 2. in the main.css:
 
 ```css
-#box2 {
+.square4 {
+    margin-top: 50px;
     height: 100px;
     width: 100px;
     padding: 10px;
     position: relative;
     background-color: mediumVioletRed;
 }
+
+.controlButtons {
+    margin-top: 50px;
+}
 ```
 
-3. in the script.js- add this jQuery:
+3. in the script.js, in the window.on load function, under your square3 jQuery, add this:
 
 ```js
-$("button").click(function(){
-    $("#box2").animate({
-        height: 'toggle';
-    }, 4000);
+$(window).on('load', function() {
+    $('.square3').fadeIn(3000).fadeOut(3000);
+
+    $("button").click(function(){
+        $(".square4").animate({
+            height: 'toggle'
+        }, 4000);
+    });
 });
 ```
 
 <br />
 
-[animate() Example](http://codepen.io/marenwoodruff/pen/mWPowR)
+[Codepen jQuery Animate Example](http://codepen.io/marenwoodruff/pen/mWPowR)
 
 <br />
+
+## My Solution to today's in-class exercise
+
+https://github.com/marenwoodruff/css-animation
 
 ## Lab
 
@@ -796,24 +800,3 @@ Look at the following examples, try to re-create them from scratch using as litt
 - [You do example- tomato box](http://codepen.io/marenwoodruff/pen/oZxGeV?editors=1100)
 - [Keyframe example](http://codepen.io/marenwoodruff/pen/EWKMKJ?editors=1100)
 - [jQuery example](http://codepen.io/marenwoodruff/pen/mWPowR)
-
-<!--/* @keyframes example {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
-} */
-/* div {
-    width: 100px;
-    height: 100px;
-    color: white;
-} */
-/* #box1 {
-  background-color: red;
-  position: relative;
-  animation-name: example;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-direction: reverse;
-} */-->
