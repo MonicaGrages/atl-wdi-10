@@ -34,6 +34,9 @@ var numsGreaterThanTen = function(numsArray){
 };
 numsGreaterThanTen([30, 20, 10, 0]);
 
+
+
+
 // #3
 // Input: an array of numbers
 // Output: `true` if ALL numbers passed in are strictly greater than 10;
@@ -58,6 +61,8 @@ return areTheyAllGreaterThanTen;
 };
 allGreaterThanTen([25, 5, 12]);
 
+
+
 // #4
 // Input: an array of words
 // Output: an array of all words from the first array with five or more letters
@@ -71,6 +76,8 @@ for (i=0; i<words.length; i++) {
 return arrayOfWordsWithAtLeastFiveLetters;
 };
 wordsWithAtLeastFiveLetters(["tomato", "peas", "watermelon", "lemon", "kiwi"]);
+
+
 
 // #5
 // Input: an array of words
@@ -90,6 +97,9 @@ var allStartingWithA = function(words){
   }
 };
 allStartingWithA(["apple", "Anna", "ants", "art"]);
+
+
+
 
 // #6
 // Input: an array of words
