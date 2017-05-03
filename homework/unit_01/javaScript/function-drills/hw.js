@@ -286,8 +286,35 @@ anyHaveAtLeastTwoVowels(["dogs", "mermaid", "cat", "banana"]);
 //          `false` otherwise
 // Edge Case: If the array is empty, the function should return `true`.
 var noneHaveTwoOrMoreVowels = function(words){
-  // Your Code Here
+for (var i = 0; i < words.length; i++) {
+      var numberOfVowels = 0;
+      words[i].toLowerCase();
+      for (var j = 0; j < words[i].length; j++) {
+        switch (words[i][j]) {
+          case "a" :
+            numberOfVowels++;
+            break;
+          case "e" :
+            numberOfVowels++;
+            break;
+          case "i" :
+            numberOfVowels++;
+            break;
+          case "o" :
+            numberOfVowels++;
+            break;
+          case "u" :
+            numberOfVowels++;
+            break;
+        }
+      }
+      if (numberOfVowels >= 2) {
+          return false;
+      }
+    }
+    return true;
 };
+noneHaveTwoOrMoreVowels(["dogs", "mermaid", "cat", "banana"]);
 
 // #12
 // Input: an array of words
@@ -296,7 +323,16 @@ var noneHaveTwoOrMoreVowels = function(words){
 // e.g. given ['cat', 'horse', 'elephant'],
 //      return { cat: 3, horse: 5, elephant: 8}
 var buildObjectFromWords = function(words){
-  // Your Code Here
+  //create object constructor?
+  //for each string in array
+  //assign to object.key?
+  //create variable for length of each word and set to 0
+  //for each character in words[i] increment counter
+  //set length counter variable equal to object.key property?
+  function newObjectFromWords () = {};
+  for (var i=0; i < words.length; i++) {
+
+  }
 };
 
 
