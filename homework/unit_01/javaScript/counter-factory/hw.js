@@ -49,7 +49,8 @@ const CounterCollection = {
 const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
-    // Your Code Here
+
+
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
@@ -65,6 +66,8 @@ const Presenter = {
 const AppController = {
   onClickNewCounter: function(event){
     // Your Code Here
+    var $divWhereCountersGo = $("#counter-list");
+    $divWhereCountersGo.append("<div class='counter' data-index=2></div>");
   },
   onClickIncrement: function(event){
     // Your Code Here
