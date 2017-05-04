@@ -4,11 +4,11 @@
 
 ## Setup
 
-Make sure that you are on the `master` branch of your `atl-wdi-9` repo.
+Make sure that you are on the `master` branch of your `atl-wdi-...` repo.
 Then run `git pull upstream master` to pull the latest materials from the
 instructors' repository. You shouldn't hit a merge conflict here, but if you do, flag down an instructor right away.
 
-Next, navigate to the homework directory for today(unit1/w02d02/`homework` directory, and run `npm install` -- this will download any assignment-specific JavaScript dependencies into to a directory called `node_modules`.
+Next, navigate to the homework directory for today(`homework/unit_01/javascript/progress-bar`), and run `npm install` -- this will download any assignment-specific JavaScript dependencies into to a directory called `node_modules`.
 
 As you work through this assignment, you should make commits regularly.
 In particular, since there are automated tests built into this assignment, we
@@ -103,16 +103,15 @@ carefully -- it may give you a clue about what to do next.
 
   When you're ready to submit your work,
 
-  1.  Run the command `npm test` and take a screenshot of the output in your
-      terminal.
+  1.  git add and git commit one more time
   2.  Push your code to your fork of the class repo.
-  3.  Add a link to the theme for today in the hmwork slack channel.
+  3.  Add a link to the schoology, to the unit_01, week 2 link.
 
-  The issue should include:
+  The submission should include:
 
   -   A link that points back to your fork.
 
-  -   The screenshot you took.
+  -   The screenshot that you took.
 
   -   A 'comfort' score on how you feel about the material, from 1 (very
       uncomfortable) to 5 (very comfortable)

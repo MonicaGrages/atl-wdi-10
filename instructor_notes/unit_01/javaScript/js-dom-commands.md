@@ -61,7 +61,7 @@ Let's create a web page and begin to inspect its structure.
 
 - Open your terminal
 - `cd` into your `ga` folder
-  - (`cd ~/Desktop/ga/clas-exercises`)
+  - (`cd ~/Desktop/ga/class-exercises`)
 - Create a new directory called `dom-intro-lesson`
   - (`mkdir dom-intro-lesson`)
 - `cd` into it and create a new file called `index.html`
@@ -122,17 +122,16 @@ We will then come back together as class. Each group will briefly demo and expla
   * document.getElementsByName
 * **Creation** 
   * document.querySelector
-  * document.createElement
   * node.style
+  * node.setAttribute
 * **Traversal** 
   * node.childNodes
   * node.children
   * node.firstChild
 * **DOM editing** 
+  * document.createElement
   * node.appendChild
   * node.removeChild
-  * node.innerText
-  * node.setAttribute
 * **Node editing** 
   * node.innerHTML
   * node.id
