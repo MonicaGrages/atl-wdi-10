@@ -74,17 +74,16 @@ const AppController = {
     $divWhereCountersGo.append($theCounter);
     $(".increment").on('click', AppController.onClickIncrement);
 
-
     CounterCollection.createCounter();
 
   },
   onClickIncrement: function(event){
-
-    // Your Code Here
+     // Your Code Here
     CounterCollection.getCounterValue();
-    CounterCollection.incrementCounter();
-
-
+    // $(".increment").on('click', function () {
+    // $("span").html(CounterCollection.counters[0].countId)
+    // });
+    // WTF
 
   },
   onClickDelete: function(event){                           // REACH
