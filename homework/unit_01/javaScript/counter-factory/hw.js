@@ -9,6 +9,7 @@ const CounterCollection = {
   lastCountId: 0,
   counters: [], // e.g. {countId: 3, count: 20}
   createCounter: function(){
+    console.log("called CounterCollection.createCounter fx");
     this.lastCountId++;
     this.counters.push({
       countId: this.lastCountId,
@@ -49,6 +50,8 @@ const CounterCollection = {
 const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
+    // Your Code Here
+
 
 
   },
@@ -66,11 +69,23 @@ const Presenter = {
 const AppController = {
   onClickNewCounter: function(event){
     // Your Code Here
+    var $theCounter = $("<div class='counter' data-index='2'<h3>Count: <span>0</span></h3><button class='increment'> + 1 </button></div>");
     var $divWhereCountersGo = $("#counter-list");
-    $divWhereCountersGo.append("<div class='counter' data-index=2></div>");
+    $divWhereCountersGo.append($theCounter);
+    $(".increment").on('click', AppController.onClickIncrement);
+
+
+    CounterCollection.createCounter();
+
   },
   onClickIncrement: function(event){
+
     // Your Code Here
+    CounterCollection.getCounterValue();
+    CounterCollection.incrementCounter();
+
+
+
   },
   onClickDelete: function(event){                           // REACH
     // Your Code Here
