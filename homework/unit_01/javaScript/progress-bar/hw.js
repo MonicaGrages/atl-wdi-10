@@ -27,9 +27,17 @@ var timerUI = {
   },
   drawCrawlers: function(timerValue){
     // Your Code Here
-    var percentCrawled = 100 - timerValue;
-    var percentLeftToCrawl = timerValue;
+    var secondsCrawled = 100 - timerValue;
+    // use margin-top and margin-left on div.crawler
+    var theBug = document.querySelector(".crawler");
+    var theGreenBugTrack = document.querySelector(".crawler-track");
+    theBug.style.marginLeft = secondsCrawled*10+"px";
+    // theBug.style.marginBottom = secondsCrawled*10+"px";
+    // ???
+    // move bug up 10px when timerValue++ and down 10px next time timerValue++
 
 
+    // bug will crawl all the way across the screen if screen width
+    // is <=1000px (100 seconds x 10 pixels per second)
   }
 };
