@@ -21,8 +21,8 @@ var timerUI = {
     var percentLeftToBurn = timerValue;
     var burntBar = document.querySelector(".burnt");
     var unburntBar = document.querySelector(".unburnt");
-    unburntBar.style.width = (percentLeftToBurn-2)+"%";
-    burntBar.style.width = (percentBurnt)+"%";
+    unburntBar.style.width = (percentLeftToBurn*.98)+"%";
+    burntBar.style.width = (percentBurnt*.98)+"%";
 
   },
   drawCrawlers: function(timerValue){

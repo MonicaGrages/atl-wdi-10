@@ -1,1 +1,22 @@
-/* Add your CSS code here. */
+body {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+}
+
+header {
+    text-align: center;
+}
+
+.container {
+  margin: 20px;
+  padding: 30px;
+  border: 2px solid gray;
+}
+
+img {
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid gray;
+  float: right;
+}
+

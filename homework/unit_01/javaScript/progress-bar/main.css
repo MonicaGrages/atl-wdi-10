@@ -58,6 +58,7 @@ See LICENSE for details.
   background-size: 100%;
   height: 40px;
   width: 40px;
+  top: 15px;
 
   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   -ms-transform: rotate(90deg);     /* IE 9 */

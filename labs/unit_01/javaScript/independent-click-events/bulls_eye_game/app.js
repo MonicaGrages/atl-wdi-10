@@ -22,7 +22,9 @@ window.onload = function() {
   var ring3 = document.querySelector('.ring-3');
 
   body.addEventListener('click', bullseyeGame.miss);
-  ring1.addEventListener('click', bullseyeGame.outerRing)
+  ring1.addEventListener('click', bullseyeGame.outerRing);
+  ring2.addEventListener('click', bullseyeGame.middleRing);
+  ring3.addEventListener('click', bullseyeGame.bullseye);
 }
 
 
@@ -31,21 +33,49 @@ var bullseyeGame = {
 
   updateScore: function(points) {
     var scoreElement = document.querySelector('.score');
-    this.score += points
+    this.score += points;
 
-    scoreElement.innerHTML = `${this.score} points`
+    scoreElement.innerHTML = `${this.score} points`;
   },
 
   miss: function(event) {
     event.stopPropagation();
     alert('YOU MISSED');
-
+    this.style.backgroundColor = "yellow";
+    document.querySelector('.ring-1').style.backgroundColor = "red";
+    document.querySelector('.ring-2').style.backgroundColor = "white";
+    document.querySelector('.ring-3').style.backgroundColor = "red";
     bullseyeGame.updateScore(0);
     // [ALERT:] needs to be bullseyeGame because this in clickEvents refers to the html element that was clicked
   },
 
   outerRing: function(event) {
     event.stopPropagation();
-    alert('outerRing was clicked')
+    alert('outerRing was clicked');
+    bullseyeGame.updateScore(10);
+    this.style.backgroundColor = "yellow";
+    document.body.style.backgroundColor = "white";
+    document.querySelector('.ring-2').style.backgroundColor = "white";
+    document.querySelector('.ring-3').style.backgroundColor = "red";
+  },
+
+  middleRing: function(event) {
+    event.stopPropagation();
+    alert('middleRing was clicked');
+    bullseyeGame.updateScore(50);
+    this.style.backgroundColor = "yellow";
+    document.body.style.backgroundColor = "white";
+    document.querySelector('.ring-1').style.backgroundColor = "red";
+    document.querySelector('.ring-3').style.backgroundColor = "red";
+  },
+
+  bullseye: function(event) {
+    event.stopPropagation();
+    alert('You got the bullseye!');
+    bullseyeGame.updateScore(100);
+    this.style.backgroundColor = "yellow";
+    document.body.style.backgroundColor = "white";
+    document.querySelector('.ring-1').style.backgroundColor = "red";
+    document.querySelector('.ring-2').style.backgroundColor = "white";
   }
 }
