@@ -22,24 +22,41 @@ const Stopwatch = {
     //the display should be updated every 10 ms per instructions
     // millisecs = millisecs +10???
     Stopwatch.millisecs = Stopwatch.millisecs + 10;
-    Stopwatch.secs = Math.floor(Stopwatch.secs + 0.01);
-    Stopwatch.mins = Math.floor(Stopwatch.min + 0.000166667);
+    if (Stopwatch.millisecs%1000 ===0) {
+      Stopwatch.millisecs = 0;
+      Stopwatch.secs = Stopwatch.secs + 1;
+    } else if (Stopwatch.secs === 60) {
+      Stopwatch.secs = 0;
+      Stopwatch.mins = Stopwatch.mins + 1;
+    }
+
+
   },
   reset: function(){
     // Your Code Here
-
+    Stopwatch.mins = 0;
+    Stopwatch.secs = 0;
+    Stopwatch.millisecs = 0;
+    $('#mins').html(0);
+    $('#secs').html(0);
+    $('#millisecs').html(0);
   },
   start: function(){
     // Your Code Here
-    console.log("Stopwatch.start function was called");
+
     Stopwatch.isRunning = true;
     Stopwatch.tickClock();
-    console.log(Stopwatch.isRunning);
+
   },
   stop: function(){
     // Your Code Here
+    if (Stopwatch.isRunning === false) {
+      Stopwatch.reset();
+    } else {
     Stopwatch.isRunning = false;
-    console.log(Stopwatch.isRunning);
+    }
+
+
   },
   lap: function(){
     // Your Code Here
@@ -68,17 +85,20 @@ const AppController = {
     $('#mins').html(Stopwatch.mins);
     $('#secs').html(Stopwatch.secs);
     $('#millisecs').html(Stopwatch.millisecs);
+    // ViewEngine.updateTimeDisplay();
   },
   handleClickStart: function() {
     // Your Code Here
 
-    console.log("called handleClickStart fx");
+
     Stopwatch.start();
   },
   handleClickStopReset: function(){
     // Your Code Here
-    console.log("called handleClickStopReset fx");
+
     Stopwatch.stop();
+
+
   },
   handleClickLap: function(){
     // Your Code Here
