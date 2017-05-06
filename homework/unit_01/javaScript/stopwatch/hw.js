@@ -29,8 +29,6 @@ const Stopwatch = {
       Stopwatch.secs = 0;
       Stopwatch.mins = Stopwatch.mins + 1;
     }
-
-
   },
   reset: function(){
     // Your Code Here
@@ -43,10 +41,11 @@ const Stopwatch = {
   },
   start: function(){
     // Your Code Here
-
-    Stopwatch.isRunning = true;
-    Stopwatch.tickClock();
-
+    if (Stopwatch.isRunning === true) {
+      return;
+    } else {Stopwatch.isRunning = true;
+      Stopwatch.tickClock();
+    }
   },
   stop: function(){
     // Your Code Here
