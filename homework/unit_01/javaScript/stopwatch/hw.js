@@ -69,22 +69,25 @@ const Stopwatch = {
   }
 };
 
+
+
 /// User Interface ///
 const ViewEngine = {
   updateTimeDisplay: function(mins, secs, millisecs){
     // Your Code Here
-
     $('#mins').html(ViewHelpers.zeroFill(mins, 2));
     $('#secs').html(ViewHelpers.zeroFill(secs, 2));
     $('#millisecs').html(ViewHelpers.zeroFill(millisecs, 2));
-
   },
   updateLapListDisplay: function(laps){
     // Your Code Here
-    var theMilliseconds = ViewHelpers.zeroFill(Stopwatch.millisecs, 2);
     if (Stopwatch.isRunning === true) {
       for (var i=0; i < laps.length; i++) {
-        var lapToAppend = laps[i].mins+':'+laps[i].secs+':'+laps[i].millisecs;
+        var lapArrayItem = laps[i];
+        var lapMins = ViewHelpers.zeroFill(lapArrayItem.mins, 2);
+        var lapSecs = ViewHelpers.zeroFill(lapArrayItem.secs, 2);
+        var lapMillisecs = ViewHelpers.zeroFill(lapArrayItem.millisecs, 2);
+        var lapToAppend = lapMins+':'+lapSecs+':'+lapMillisecs;
       }
       $('#lap-list').append('<li></li>');
       $('li:last-child').html(lapToAppend);
@@ -95,11 +98,10 @@ const ViewEngine = {
 };
 
 
+
 const ViewHelpers = {
   zeroFill: function(number, length){
     // Your Code Here
-    // supposed to use number and length parameters here
-    // number
     if (number.toString().length > length) {
       number = number / 10;
       return number.toString();
@@ -139,7 +141,7 @@ const AppController = {
 };
 
 window.onload = function(){
-  // Attach AppController methods to the DOM as event handlers here.
+  //
   $('#start').on('click', AppController.handleClickStart);
   $('#stop').on('click', AppController.handleClickStopReset);
   $('#lap').on('click', AppController.handleClickLap);
