@@ -33,9 +33,9 @@ const Stopwatch = {
 
   reset: function(){
     // Your Code Here
-    Stopwatch.mins = '00';
-    Stopwatch.secs = '00';
-    Stopwatch.millisecs = '000';
+    Stopwatch.mins = 0;
+    Stopwatch.secs = 0;
+    Stopwatch.millisecs = 0;
     ViewEngine.updateTimeDisplay(Stopwatch.mins, Stopwatch.secs, Stopwatch.millisecs);
     Stopwatch.laps = [];
     ViewEngine.updateLapListDisplay();
@@ -57,7 +57,6 @@ const Stopwatch = {
 
   lap: function(){
     // Your Code Here
-    //call update lap display and pass in laps as a parameter
     if (Stopwatch.isRunning === true) {
       var lapToCapture = {
         mins: Stopwatch.mins,
@@ -74,14 +73,15 @@ const Stopwatch = {
 const ViewEngine = {
   updateTimeDisplay: function(mins, secs, millisecs){
     // Your Code Here
-    ViewHelpers.zeroFill();
-    $('#mins').html(mins);
-    $('#secs').html(secs);
-    $('#millisecs').html(millisecs);
+
+    $('#mins').html(ViewHelpers.zeroFill(mins, 2));
+    $('#secs').html(ViewHelpers.zeroFill(secs, 2));
+    $('#millisecs').html(ViewHelpers.zeroFill(millisecs, 2));
 
   },
   updateLapListDisplay: function(laps){
     // Your Code Here
+    var theMilliseconds = ViewHelpers.zeroFill(Stopwatch.millisecs, 2);
     if (Stopwatch.isRunning === true) {
       for (var i=0; i < laps.length; i++) {
         var lapToAppend = laps[i].mins+':'+laps[i].secs+':'+laps[i].millisecs;
@@ -100,9 +100,15 @@ const ViewHelpers = {
     // Your Code Here
     // supposed to use number and length parameters here
     // number
-
-    // return
-
+    if (number.toString().length > length) {
+      number = number / 10;
+      return number.toString();
+    } else if (number.toString().length < length) {
+      number = '0'+number.toString();
+      return number;
+    } else {
+      return number.toString();
+    }
   },
 };
 
@@ -115,17 +121,12 @@ const AppController = {
   },
   handleClickStart: function() {
     // Your Code Here
-
-
     Stopwatch.start();
   },
   handleClickStopReset: function(){
     // Your Code Here
-
     if (Stopwatch.isRunning === true) {Stopwatch.stop();}
     else if (Stopwatch.isRunning === false) {Stopwatch.reset();}
-
-
   },
   handleClickLap: function(){
     // Your Code Here
