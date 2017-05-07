@@ -22,7 +22,7 @@ const Stopwatch = {
     //the display should be updated every 10 ms per instructions
     // millisecs = millisecs +10???
     Stopwatch.millisecs = Stopwatch.millisecs + 10;
-    if (Stopwatch.millisecs%1000 ===0) {
+    if (Stopwatch.millisecs%1000 === 0) {
       Stopwatch.millisecs = 0;
       Stopwatch.secs = Stopwatch.secs + 1;
     } else if (Stopwatch.secs === 60) {
@@ -30,35 +30,43 @@ const Stopwatch = {
       Stopwatch.mins = Stopwatch.mins + 1;
     }
   },
+
   reset: function(){
     // Your Code Here
-    Stopwatch.mins = 0;
-    Stopwatch.secs = 0;
-    Stopwatch.millisecs = 0;
-    $('#mins').html(0);
-    $('#secs').html(0);
-    $('#millisecs').html(0);
+    Stopwatch.mins = '00';
+    Stopwatch.secs = '00';
+    Stopwatch.millisecs = '000';
+    ViewEngine.updateTimeDisplay(Stopwatch.mins, Stopwatch.secs, Stopwatch.millisecs);
+    Stopwatch.laps = [];
+    ViewEngine.updateLapListDisplay();
   },
+
   start: function(){
     // Your Code Here
     if (Stopwatch.isRunning === true) {
       return;
-    } else {Stopwatch.isRunning = true;
+    } else if (Stopwatch.isRunning === false) {
+      Stopwatch.isRunning = true;
       Stopwatch.tickClock();
     }
   },
   stop: function(){
     // Your Code Here
-    if (Stopwatch.isRunning === false) {
-      Stopwatch.reset();
-    } else {
     Stopwatch.isRunning = false;
-    }
-
-
   },
+
   lap: function(){
     // Your Code Here
+    //call update lap display and pass in laps as a parameter
+    if (Stopwatch.isRunning === true) {
+      var lapToCapture = {
+        mins: Stopwatch.mins,
+        secs: Stopwatch.secs,
+        millisecs: Stopwatch.millisecs
+      };
+      Stopwatch.laps.push(lapToCapture);
+      ViewEngine.updateLapListDisplay(Stopwatch.laps);
+    }
   }
 };
 
@@ -66,25 +74,44 @@ const Stopwatch = {
 const ViewEngine = {
   updateTimeDisplay: function(mins, secs, millisecs){
     // Your Code Here
+    ViewHelpers.zeroFill();
+    $('#mins').html(mins);
+    $('#secs').html(secs);
+    $('#millisecs').html(millisecs);
+
   },
   updateLapListDisplay: function(laps){
     // Your Code Here
-  },
+    if (Stopwatch.isRunning === true) {
+      for (var i=0; i < laps.length; i++) {
+        var lapToAppend = laps[i].mins+':'+laps[i].secs+':'+laps[i].millisecs;
+      }
+      $('#lap-list').append('<li></li>');
+      $('li:last-child').html(lapToAppend);
+    } else if (Stopwatch.isRunning === false) {
+      $('#lap-list').html('');
+    }
+  }
 };
+
+
 const ViewHelpers = {
   zeroFill: function(number, length){
     // Your Code Here
+    // supposed to use number and length parameters here
+    // number
+
+    // return
+
   },
 };
+
 
 /// Top-Level Application Code ///
 const AppController = {
   handleClockTick: function(){
     // Your Code Here
-    $('#mins').html(Stopwatch.mins);
-    $('#secs').html(Stopwatch.secs);
-    $('#millisecs').html(Stopwatch.millisecs);
-    // ViewEngine.updateTimeDisplay();
+    ViewEngine.updateTimeDisplay(Stopwatch.mins, Stopwatch.secs, Stopwatch.millisecs);
   },
   handleClickStart: function() {
     // Your Code Here
@@ -95,13 +122,18 @@ const AppController = {
   handleClickStopReset: function(){
     // Your Code Here
 
-    Stopwatch.stop();
+    if (Stopwatch.isRunning === true) {Stopwatch.stop();}
+    else if (Stopwatch.isRunning === false) {Stopwatch.reset();}
 
 
   },
   handleClickLap: function(){
     // Your Code Here
-    console.log("called handleClickLap fx");
+    if (Stopwatch.isRunning === true) {
+      Stopwatch.lap();
+    } else if (Stopwatch.isRunning === false) {
+      return;
+    }
   }
 };
 
