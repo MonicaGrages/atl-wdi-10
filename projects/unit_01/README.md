@@ -17,10 +17,10 @@ The objectives of this project are to:
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: The Game
 ​
 ## Project due date
-Your project is due at 2 pm on Friday, March, 10th.
+Your project is due at 2 pm on Friday, May, 12th.
 
-**Friday, March 10th**<br>
-Submit a link to your repo AND a link to your live site if you were able to deploy it to Ga-laxy. You will be presenting your projects in front of the class on Friday!
+**Friday, March 12th**<br>
+Submit a link to your repo AND a link to your live site if you were able to deploy it, to Schoology. You will be presenting your projects in front of the class on Friday!
 
 ## Make a new repo
 Before you begin, make a new github repo for your project. **Do not** begin your project within the class repo.
@@ -38,21 +38,6 @@ Write a _Connect 4_ game that allows two players to compete. The players are sha
 * Alternate the first player to move: Player 1 moves first in game 1, Player 2 moves first in game 2, etc.
 * Allow players to enter their name and display their name instead of "Player 1" and "Player 2".
 * Provide a way to play against the computer (using a simple A.I. algorithm)
-
----
-
-### Simon
-
-![Simon Game](images/simon-game.jpg)
-
-Write a _Simon_ game that displays 4 colored buttons (or clickable areas) that light up and play a sound. Have the computer play a random sequence, starting with a length of 1 and growing with each round. If the user can replay the sequence by clicking on the colored buttons in the correct order, then the computer goes to the next round and the sequence gets longer (same sequence but with one new randomly generated selection added to the end). If the user is unable to replay the sequence, then their score is the length of the sequence they successfully replayed.
-
-Have a unique sound for each colored button and play the sound both when the computer plays the sequence and when the user clicks on the buttons to replay the sequence. Have a special sound for when the user makes a mistake.
-
-#### Bonuses:
-
-* Display a scoreboard of the longest sequence successfully played to date.
-* Have a way for the user to choose the difficulty (`easy`, `medium`, or `hard`) where the `easy` mode plays the sequence slowly (one second per highlighted button) and the `hard` mode plays the sequence more quickly (1/4 second per highlight).
 
 ---
 
@@ -109,6 +94,22 @@ Write a _BlackJack_ game to try to beat the dealer. Allow the user to place a be
 * Add avatar choices for the player
 * Implement multiple games on your site
 
+---
+
+<!-- ### Up for a real challenge? Simon
+**You will need to figure out promises in order to make this work**
+
+![Simon Game](images/simon-game.jpg)
+
+Write a _Simon_ game that displays 4 colored buttons (or clickable areas) that light up and play a sound. Have the computer play a random sequence, starting with a length of 1 and growing with each round. If the user can replay the sequence by clicking on the colored buttons in the correct order, then the computer goes to the next round and the sequence gets longer (same sequence but with one new randomly generated selection added to the end). If the user is unable to replay the sequence, then their score is the length of the sequence they successfully replayed.
+
+Have a unique sound for each colored button and play the sound both when the computer plays the sequence and when the user clicks on the buttons to replay the sequence. Have a special sound for when the user makes a mistake.
+
+#### Bonuses:
+
+* Display a scoreboard of the longest sequence successfully played to date.
+* Have a way for the user to choose the difficulty (`easy`, `medium`, or `hard`) where the `easy` mode plays the sequence slowly (one second per highlighted button) and the `hard` mode plays the sequence more quickly (1/4 second per highlight). -->
+
 
 ## Planning and Deliverables
 
@@ -116,12 +117,14 @@ Write a _BlackJack_ game to try to beat the dealer. Allow the user to place a be
 
 * All source code is checked into GitHub
   - create a repo for your app and show that you've been commiting early and often while utilizing clear commit messages.
+  - 30+ commits
 * A `README.md` file containing:
   - A Project description
   - A Link to the Deployed App
   - A Link to the Trello Board
   - A Link to any Wirefames or Mockups (or inline photos / screenshots will work too!)
   - A list of technologies, libraries, and/or frameworks used in the project, such as `Twitter Bootstrap`, `jQuery`, or `Animate.css`
+  - What you would like to add in version 2
 * Wireframes or Mockups -- what does the app look like?
   - Simple: take a picture of a whiteboard drawing
   - Advanced: use a tool such as [Balsamiq](https://balsamiq.com/) or [Mockingbird](https://gomockingbird.com/home)
@@ -133,6 +136,7 @@ Write a _BlackJack_ game to try to beat the dealer. Allow the user to place a be
     * In Progress
     * Under Review
     * Done
+    * Icebox
 
 ### Sample Project `README.md` files:
 
@@ -176,7 +180,7 @@ We encourage you to hold your stand-ups in the mornings when you start working t
 
 If you have ideas on how you can help a fellow-student with work that they are stuck on, please follow-up with information AFTER the stand up.
 
-**Tuesday, March 7th**
+**Tuesday, May 9th**
 <br />
 You will come with your choice of project, pseudo-code, wireframes and user stories
 
@@ -190,7 +194,7 @@ You will come with your choice of project, pseudo-code, wireframes and user stor
 6. Post to Stack Overflow, be sure to follow the format for submitting bug reports, provide lots of context!
 7. Javascript and Jquery [videos](https://www.youtube.com/playlist?list=PLw1xVKFboueks5UMLogE01mdThRU577oa) produced by GA! 
 
-## Formatting your GitHub Issue for atl-wdi-9 to ask for help
+## Formatting your GitHub Issue for atl-wdi-10 to ask for help
 
 *COMMIT/PUSH OFTEN! Your code on GitHub should be up to date. Submitting an issue and linking your classmates to old, out-of-date code will hinder the process.*
 
@@ -213,7 +217,7 @@ The error(s) returned, copy and pasted/typed out/screenshot, not paraphrased.
 
 Your project will be evaluated by your instructional team in order to provide you with useful feedback. The following criteria will be used for the evaluation:
 
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
+* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, README, and/or ERDs, as specified above? Did you use source control as expected (30+ commits) for the phase of the program you’re in (detailed above)?
 
 * __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
 
