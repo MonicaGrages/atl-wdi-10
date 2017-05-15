@@ -5,11 +5,15 @@
 
 ### The 6 highest-starred npm packages are:
 
-| Tables        | Are           | Cool  |
+| Package Name | Description | Total Downloads last month|
 | ------------- |:-------------:| -----:|
+| express | Fast, unopinionated, minimalist web framework | 11,122,837 |
+| gulp | gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow. | 2,805,756 |
+| zebra stripes | are neat      |    $1 |
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
+
 
 # express
 
