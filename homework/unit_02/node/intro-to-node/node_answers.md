@@ -5,37 +5,50 @@
 
 ### The 6 highest-starred npm packages are:
 
-# Library 1 Name
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+# express
 
 ### Description:
-brief brief description here
+Fast, unopinionated, minimalist web framework
 
-### Total Downloads last month:
+### Total Downloads last month: 11,122,837
 
-# Library 2 Name
-
-### Description:
-brief description here
-
-### Total Downloads last month:
-
-# Library 3 Name
+# gulp
 
 ### Description:
-brief description here
+gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.
 
-### Total Downloads last month:
+### Total Downloads last month: 2,805,756
 
-# Library 4 Name
-
-### Description:
-brief description here
-
-### Total Downloads last month:
-
-# Library 5 Name
+# request
 
 ### Description:
-brief description here
+Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.
 
-### Total Downloads last month:
+### Total Downloads last month: 23,299,113
+
+# lodash
+
+### Description:
+Lodash modular utilities. The Lodash library exported as Node.js modules.
+
+### Total Downloads last month: 39,884,327
+
+# async
+
+### Description:
+Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. Although originally designed for use with Node.js and installable via npm install --save async, it can also be used directly in the browser.
+
+### Total Downloads last month: 41,427,360
+
+# pm2
+
+### Description:
+PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks.
+
+### Total Downloads last month: 519,601
