@@ -13,6 +13,7 @@ var port    = 3000;
 
 app.set('view engine', 'hbs'); //tells Express what to use for rendering templates
 app.set('views', './views');
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
   // when a request comes in at localhost:3000, it will respond
@@ -35,7 +36,6 @@ app.get('/order', function(req, res) {
   });
 });
 
-// app.get('')
 
 app.listen(port, function(){
   console.log("==========================")
