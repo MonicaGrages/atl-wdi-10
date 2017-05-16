@@ -19,17 +19,23 @@ app.get('/', function(req, res) {
   res.send('Welcome to Pizza Express!');
 });
 
-app.get('/topping/:type', function(req, res, next) {
+
+app.get('/topping', function(req, res) {
   // res.send(req.params.type + " pizza! Good choice");
-  res.render();
+  res.render('toppings', {
+    data1: req.query.type
+  });
 });
 
-app.get('/order/:amount/:size', function(req, res, next) {
+app.get('/order', function(req, res) {
   // res.send('Your order for '+req.params.amount+' '+req.params.size+' pizzas will be ready in 1 minute!');
-  res.render();
+  res.render('order', {
+    data1 : req.query.amount,
+    data2 : req.query.size
+  });
 });
 
-app.get('')
+// app.get('')
 
 app.listen(port, function(){
   console.log("==========================")
