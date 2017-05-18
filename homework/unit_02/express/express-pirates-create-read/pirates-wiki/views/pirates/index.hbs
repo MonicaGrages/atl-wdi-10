@@ -1,6 +1,9 @@
 <h2>These Are Some Pirates</h2>
-<ul>
+<a href='/pirates/new'><button class='new-pirate-button'>Add Another Pirate</button></a>
+<div>
+<ul id='pirate_container'>
   {{#each seededPirates}}
+  <div class='pirate'>
     <a href='/pirates/{{@index}}'><li> Name: {{name}}
     <br> Birthplace: {{birthplace}}
     <br> Death Year: {{death_year}}
@@ -12,7 +15,9 @@
       <input type="submit" value="Delete this Pirate"/>
     </form>
     <br>
+  </div>
   {{/each}}
 </ul>
+</div>
 
-<a href='/pirates/new'><button>Add Another Pirate</button></a>
+
