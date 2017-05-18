@@ -36,17 +36,10 @@ router.get('/:id', function(request, response) { //this is the show route and ha
 
 router.post('/', function (request, response) {
   //things happen here
-  var addedPirate =
-  {
-    name: request.body.name,
-    birthplace: request.body.birthplace,
-    death_year: request.body.death_year,
-    base: request.body.base,
-    nickname: request.body.nickname
-  };
-  console.log(addedPirate);
+  var addedPirate = request.body;
+
   seededPirates.push(addedPirate);
-  console.log(seededPirates[seededPirates.length-1]);
+
   response.redirect('/pirates');
 });
 
