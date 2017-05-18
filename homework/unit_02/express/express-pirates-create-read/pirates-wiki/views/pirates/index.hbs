@@ -7,10 +7,12 @@
     <br> Base: {{base}}
     <br> Nickname: {{nickname}}
     </li></a>
+    <a href='/pirates/{{@index}}/edit'><button>Edit this Pirate</button></a>
+    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete this Pirate"/>
+    </form>
     <br>
-    <a href=''><button>Edit this Pirate</button></a>
-    <a href=''><button>Delete this Pirate</button></a>
   {{/each}}
 </ul>
 
-<a href='/pirates/new'>Add Another Pirate</a>
+<a href='/pirates/new'><button>Add Another Pirate</button></a>
