@@ -1,7 +1,7 @@
 <h2>These Are Some Pirates</h2>
 <a href='/pirates/new'><button class='new-pirate-button'>Add Another Pirate</button></a>
 <div>
-<ul id='pirate_container'>
+<ul class='pirate_container'>
   {{#each seededPirates}}
   <div class='pirate'>
     <a href='/pirates/{{@index}}'><li> Name: {{name}}
@@ -10,10 +10,13 @@
     <br> Base: {{base}}
     <br> Nickname: {{nickname}}
     </li></a>
-    <a href='/pirates/{{@index}}/edit'><button>Edit this Pirate</button></a>
-    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
-      <input type="submit" value="Delete this Pirate"/>
-    </form>
+    <a href='/pirates/{{@index}}/edit'><button class='edit-button'><span class='edit'>Edit Pirate</span></button></a>
+    <div class='delete-button-container'>
+      <div><form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+        <input class= 'delete-button' type="submit" value="           Delete Pirate"/>
+<!--         <span class='delete'>Delete this Pirate</span> -->
+      </form></div>
+    </div>
     <br>
   </div>
   {{/each}}

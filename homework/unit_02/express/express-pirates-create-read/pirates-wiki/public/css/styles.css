@@ -7,22 +7,36 @@ body {
   box-sizing: border-box;
 }
 
-/*.background-image {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-image: url(http://www.pirateshowcancun.com/blog/wp-content/uploads/2016/08/famous-pirate-ships-in-history-1050x591.jpg);
-  background-size: 2300px;
-  background-repeat: no-repeat;
-  box-sizing: border-box;*/
-}
-
 h1 {
   margin: 0;
+  font-size: 50px;
 }
 
 .new-pirate-button {
   font-size: 20px;
+}
+
+.edit-button {
+  background-image: url(http://www.free-icons-download.net/images/pirate-ship-icon-74164.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 120px;
+  height: 45px;
+}
+
+.edit {
+  margin-left: 25px;
+}
+
+.delete-button {
+  background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/9626-200.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 120px;
+  height: 45px;
+  margin-top: 5px;
 }
 
 a {
@@ -34,9 +48,10 @@ a {
 .pirate {
   height: 250px;
   width: 260px;
+  margin: 30px 15px;
 }
 
-#pirate_container {
+.pirate_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
