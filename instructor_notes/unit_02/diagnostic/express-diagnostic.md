@@ -16,8 +16,11 @@ It starts node package manager so you can use or download node packages?
 
 ### Question 4: What does CRUD stand for?  What are the HTTP verbs that are associated with each function?
 Create = POST
+
 Read = GET
+
 Update = PUT
+
 Delete = DELETE
 
 ### Question 5: If we have a form where we want to create new data, what type of `method` do we use in our form?
@@ -35,14 +38,18 @@ This would update the name that was entered in the form.
 
 
 ### Question 7: Write an express route that handles a POST request to the url `/menus` and redirects to the `/homepage`
+
+```
 router.post('/menus', function (request, response) {
   //something else goes here?
   response.redirect('/');
 });
+```
 
 ### Question 8: In the following express route, write how you would grab the values of `:id` and `:song_id` in javascript.
 
 req.params.id
+
 req.params.song_id
 
 ```
@@ -63,6 +70,8 @@ Controller - making separate controller files for express routers outside of our
 ## Bonus Question
 
 ### Question 10: Write an express route that handles a GET request to the url `/products` and sends back the JSON object {error: "Bad Request"}
+```
 router.get('/products', function (req, res) {
   res.send({error: "Bad Request"});
 });
+```
