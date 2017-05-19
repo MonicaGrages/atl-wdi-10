@@ -9,11 +9,15 @@ var app     = express();
 // assigning 3000 as our port
 var port    = 3000;
 
+var toppingsRouter = require('./controllers/toppingsController.js');
+
 // tells the server to listen for requests on port 3000
 
 app.set('view engine', 'hbs'); //tells Express what to use for rendering templates
 app.set('views', './views');
 app.use(express.static(__dirname + '/public'));
+app.use('/toppings', toppingsRouter);
+
 
 app.get('/', function(req, res) {
   // when a request comes in at localhost:3000, it will respond
