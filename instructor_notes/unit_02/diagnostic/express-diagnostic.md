@@ -54,8 +54,10 @@ app.get("/artist/:id/song/:song_id"), function(req, res){
 
 
 ### Question 9: What is MVC? How have we been using it so far?
-Model - this is where the database things are?
-View - handlebars
+Model - this is where the database things are?,
+
+View - handlebars,
+
 Controller - making separate controller files for express routers outside of our server.js
 
 ## Bonus Question
