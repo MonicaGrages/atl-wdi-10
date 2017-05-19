@@ -65,7 +65,7 @@ Model - this is where the database things are?,
 
 View - handlebars,
 
-Controller - making separate controller files for express routers outside of our server.js
+Controller - making separate controller files for express routers outside of our server.js. This is where we handle our routes for different resources.
 
 ## Bonus Question
 
