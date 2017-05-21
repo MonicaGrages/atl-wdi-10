@@ -1,0 +1,11 @@
+.Poster {
+  height: 200px;
+}
+
+.movie-container {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

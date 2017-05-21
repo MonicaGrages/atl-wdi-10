@@ -1,0 +1,14 @@
+<h2>One of Your Favorite Movies</h2>
+
+{{Title}} ({{Year}})
+<img class='Poster' src='{{Poster}}'>
+
+<a href='/favorites/{{id}}/edit'>Edit Comments</a>
+
+<form action="/favorites/{{id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete from Favorites"/>
+</form>
+
+<p><a href="http://localhost:3000/search">Search For a Movie</a></p>
+
+<p><a href='/favorites'>See Your Favorite Movies List</a></p>
