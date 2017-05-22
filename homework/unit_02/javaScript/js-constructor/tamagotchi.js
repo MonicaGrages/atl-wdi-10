@@ -13,19 +13,23 @@ function Tamagotchi(name, creatureType) {
   this.puke = function () {
     this.foodInTummy --;
     console.log("food in "+this.name+"'s tummy: "+this.foodInTummy);
-    this.cry;
+    this.cry();
   };
   this.yawn = function () {
     this.restedness --;
     console.log(this.name+"'s restedness is: "+this.restedness);
   };
-  this.hungerTimer = function (callback, timeOut) {
-    console.log('hungerTimer called'); //why doesn't this work?
-    setInterval(callback, timeOut); //why doesn't this work?
-  }
+  this.hungerTimer = function () {
+    // console.log('hungerTimer called');
+    setInterval(this.cry, 6000); //working but doesn't know this.name
+  };
+  this.yawnTimer = function (callback, timeOut) {
+    console.log('yawnTimer called');
+  };
   this.start = function() {
     console.log('Started '+this.name);
-    this.hungerTimer(this.cry, 6000); // why doesn't this work?
+    this.hungerTimer();
+    this.yawnTimer();
     // setInterval(this.cry, 6000);
     // setInterval(this.yawn, 1000);
     // setInterval(this.puke, 2000);
@@ -39,3 +43,5 @@ var beep = new Tamagotchi('Beep', 'robot');
 
 //test out your Tamagotchies below via console.logs
 fred.start();
+fred.puke();
+burney.puke();
