@@ -23,7 +23,7 @@ function Tamagotchi(name, creatureType) {
 
 //create new Tamagotchis
 var fred = new Tamagotchi('Fred', 'monster');
-var fire = new Tamagotchi('Fire', 'dragon');
+var burney = new Tamagotchi('Burn-ey', 'dragon');
 var beep = new Tamagotchi('Beep', 'robot');
 
 //test out your Tamagotchies below via console.logs
