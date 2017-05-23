@@ -31,6 +31,40 @@ This app provides easy access to all your e-mail service providers in one app. T
 
 ```
 Write your answer here or in a separate js file.
+
+A User has:
+  -id number (one to one)
+  -email account(s) (one to many)
+
+user = {
+    id_number : Number,
+    accounts : [{}]
+  }
+
+An Email Account has:
+  -id number (one to one)
+  -name/service provider (one to one)
+  -associated user id number (one to one)
+  -email(s) (one to many)
+
+account = {
+  id_number : Number,
+  provider : String,
+  emails : [{}]
+}
+
+An Email has:
+  -id number (one to one)
+  -sender (one to one)
+  -content (one to one)
+  -timestamp (one to one)
+
+email = {
+  id_number : Number,
+  sender : String,
+  content : String,
+  timestamp : Date
+}
 ```
 
 ### 2. Radio on the Internet app
@@ -40,6 +74,50 @@ This app hosts a ton of radio stations, each featuring their own playlists of so
 
 ```
 Write your answer here or in a separate js file.
+
+A song has:
+  -id number (one to one)
+  -title (one to one)
+  -artist (one to one)
+  -length  (one to one)
+  -genre(s) (one to many)
+  -release date (one to one)
+
+song = {
+  id_number : Number,
+  title : String,
+  artist : String,
+  length : Number,
+  genres : [String, String]
+}
+
+An album has:
+  -id number (one to one)
+  -title (one to one)
+  -artist (one to one)
+  -song(s) (one to many)
+  -genre (one to many)
+  -release date (one to one)
+
+album = {
+  id_number : Number,
+  title : String,
+  artist : String,
+  song : [{}],
+  genre : [String, String]
+  release_date : Date
+}
+
+A playlist has:
+  -id number (one to one)
+  -song(s) (one to many)
+  -title (one to one)
+
+playlist = {
+  in_number : Number,
+  song : [{}],
+  title : String
+}
 ```
 
 ### 3. Rock Concert App
@@ -48,11 +126,77 @@ This app will be a tool for managing all of your favorite bands' concerts; it wi
 
 ```
 Write your answer here or in a separate js file.
+
+A band will have:
+  -name (one to one)
+  -id number (one to one)
+  -tour(s) (one to many)
+
+band = {
+  name : String,
+  id_number : Number,
+  tour : [{}]
+}
+
+A user will have:
+  -name (one to one)
+  -id number (one to one)
+  -location (one to one)
+
+user = {
+  name : String,
+  id_number : Number,
+  location : String
+}
+
+A tour will have:
+  -id number (one to one)
+  -date(s) (one to many)
+  -location(s) (one to many)
+  -ticket purchasing function (one to one)
+
+tour = {
+  id_number : Number,
+  date : [Date, Date, Date]
+  location : [String, String, String]
+}
 ```
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
+```
+Write your answer here or in a separate js file.
+
+A coffeeshop will have:
+  -name (one to one)
+  -id number (one to one)
+  -location(s) (one to many)
+  -menu (one to one)
+  -order function (one to one)
+
+coffeeshop = {
+  name : String
+  id_number : Number,
+  location : String,
+  menu : [{}],
+  order : function() {}
+}
+
+A user will have:
+  -name (one to one)
+  -id number (one to one)
+  -location (one to one)
+  -saved orders (one to many)
+
+user = {
+  name : String,
+  id_number : Number,
+  location : String,
+  orders : [{}]
+}
+
+```
 
 ### 5. Team Tracker App
 
@@ -60,6 +204,32 @@ This app shows you all the latest stats from your favorite sports teams. You can
 
 ```
 Write your answer here or in a separate js file.
+
+A team will have:
+  -id number (one to one)
+  -name (one to one)
+  -players (one to many)
+  -number of wins (one to one)
+
+team = {
+  id_number : Number,
+  name : Name,
+  players : [{}],
+  wins : Number
+}
+
+A player will have:
+  -id number (one to one)
+  -name (one to one)
+  -age (one to one)
+  -number of points scored (one to one)
+
+player = {
+  id_number : String,
+  name : String,
+  age : Number,
+  points : Number
+}
 ```
 
 
@@ -69,6 +239,9 @@ Q. When you were creating relationships between the models, what were some thoug
 
 ```
 Write your answer here or in a separate js file.
+
+- Is this a one to one or one to many relationship?
+- Are any of the attributes inherited from or actually belonging to another model?
 ```
 
 ### Reading and Videos for Tomorrow
