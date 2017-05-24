@@ -41,7 +41,7 @@ app.use('/', donutsController);
 //======================
 //CONNECT MONGOOSE TO "donut_store"
 // Now that we're connected, let's save that connection to the database in a variable.
-mongoose.connect('mongodb://localhost/donut_store');
+mongoose.connect('mongodb://localhost/donut_mongoose');
 var db = mongoose.connection;
 
 // Will log an error if db can't connect to MongoDB
