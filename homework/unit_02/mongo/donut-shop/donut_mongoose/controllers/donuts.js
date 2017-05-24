@@ -2,7 +2,9 @@
 // REQUIREMENTS
 //======================
 // require express, router, mongoose, Donut schema
-
+var express = require("express");
+var router = express.Router();
+var Donut = require('../models/donuts.js');
 
 //======================
 // INDEX
@@ -62,3 +64,4 @@
 // EXPORTS
 //======================
 // export router with module.exports
+module.exports = router;
