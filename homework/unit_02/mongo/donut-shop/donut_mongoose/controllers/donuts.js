@@ -35,7 +35,19 @@ router.get('/', function (request, response) {
 // SHOW
 //======================
 // Create a GET show route "/:id" that renders the donut's show page
-
+router.get('/:id', function (request, response) {
+  var donutId = request.params.id;
+  Donut.findById(donutId)
+  .exec(function (error, donut) {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    response.render('products/show', {
+      donut : donut
+    });
+  });
+});
 
 
 

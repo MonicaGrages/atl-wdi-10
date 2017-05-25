@@ -1,43 +1,35 @@
 <main>
 
-		<h2>You are viewing:
-
-			<<<< DONUT NAME HERE >>>>
-
-		</h2>
+		<h2>You are viewing: {{donut.name}}</h2>
 
 		<a href="/">Return to Home Page</a>
 
 		<div class="donut-container-show">
-			<h2 id="donut-name">
+			<h2 id="donut-name">{{donut.name}}</h2>
 
-					<<<< DONUT NAME HERE >>>>
-
-			</h2>
-
-					<<<< DONUT IMAGE HERE >>>>
+			<img src='{{donut.img}}' alt='donut_image'>
 
 			<br>
 			<h3>Description:</h3>
 				<p>
-
-					<<<< DONUT DESCRIPTION HERE >>>>
-
+					{{donut.description}}
 				</p><br>
 			<h3>Price:</h3>
 				<p id="cost">$
 
-					<<<< DONUT PRICE HERE >>>> each</p><br>
+					{{donut.price}} each</p><br>
 
 				<h3 id="quantity">
 
-		 				<<<< DONUT QUANTITY >>>> remaining
+		 				{{donut.qty}} remaining
 
 				</h3>
 
 				<br>
 
-				<<<< LINK TO THE DONUT's EDIT PAGE >>>>
+				<a href='/edit/{{donut._id}}'>Edit this Donut</a>
+
+				<br>
 
 				<<<< BONUS: BUTTON THAT UPDATES THE COUNT >>>>
 
