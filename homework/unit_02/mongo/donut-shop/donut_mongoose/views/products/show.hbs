@@ -21,7 +21,7 @@
 
 				<h3 id="quantity">
 
-		 				{{donut.qty}} remaining
+		 				<span id='qty'>{{donut.qty}}</span> remaining
 
 				</h3>
 
@@ -30,12 +30,15 @@
 				<a href='/edit/{{donut._id}}'>Edit this Donut</a>
 
 				<br>
+				<br>
 
-				<<<< BONUS: BUTTON THAT UPDATES THE COUNT >>>>
+				<button id='buy_donut'>Get You One!</button>
 
 			</div>
 
 			<<<< BUTTON THAT DELETED THE DONUT >>>>
 	</main>
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="/script.js"></script>
 </body>
 </html>
