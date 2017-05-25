@@ -10,7 +10,18 @@ var Donut = require('../models/donuts.js');
 // INDEX
 //======================
 // Create a GET index route "/" that sends all donuts to index.hbs
-
+router.get('/', function (request, response) {
+  Donut.find({})
+  .exec(function(error, donuts) {
+    if (error) {
+      console.log('error finding donuts: '+error);
+      return;
+    }
+    response.render('products/index', {
+      donuts : donuts
+    });
+  })
+})
 
 
 //======================
