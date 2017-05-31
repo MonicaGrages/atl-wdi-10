@@ -1,0 +1,18 @@
+<h1>Showing User {{user._id}}</h1>
+
+<div>First Name: {{user.first_name}}</div>
+<div>Last Name: {{user.last_name}}</div>
+<div>Email: {{user.email}}</div>
+<div>Created at: {{user.created_at}}</div>
+<div>Items:
+  <ul>
+    {{#each user.items}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</div>
+<a href='edit/{{user._id}}'>Edit this User</a>
+
+
+
+

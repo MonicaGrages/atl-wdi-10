@@ -80,6 +80,9 @@ router.get('/:id', function (request, response) {
 //======================
 // Create a DELETE delete route "/:id" that deletes the donut and
 // redirects back to index page "/"
+router.delete('/:id', function (request, response) {
+
+});
 
 
 

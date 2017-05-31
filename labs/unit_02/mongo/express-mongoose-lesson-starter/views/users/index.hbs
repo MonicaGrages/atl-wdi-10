@@ -1,0 +1,27 @@
+<h1>Users Index Page</h1>
+
+<ul>
+  {{#each userList}}
+    <a href='/users/{{_id}}'>
+      <li>
+        <div>ID: {{_id}}</div>
+        <div>First Name: {{first_name}}</div>
+        <div>Last Name: {{last_name}}</div>
+        <div>Email: {{email}}</div>
+        <div>Created at: {{created_at}}</div>
+        <div>Items:
+          <ul>
+            {{#each items}}
+            <li>{{name}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
+    </a>
+    <a href='/users/delete/{{_id}}'>Delete this User
+    <br>
+    <br>
+  {{/each}}
+</ul>
+<br>
+<a href='/users/new'>Create a New User</a>

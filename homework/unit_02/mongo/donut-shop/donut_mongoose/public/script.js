@@ -6,3 +6,4 @@ $('#buy_donut').on('click', function (){
   quantity --;
   $('#qty').html(quantity);
 });
+
