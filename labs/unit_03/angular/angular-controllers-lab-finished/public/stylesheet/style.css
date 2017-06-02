@@ -9,11 +9,11 @@ ul {
 
 /**** used when product container was a div ****/
 
-/*.productContainer {
+.productContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}*/
+}
 
 span {
     width: 20%;
