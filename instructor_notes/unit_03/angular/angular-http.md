@@ -95,7 +95,7 @@ Now, real quickly – we might want to seed a little data first.
 ## Demo of Starter Code (5 mins)
 
 1. `git pull upstream master`
-1. cd into `labs/unit_03/angular/presidents-app/presidents-all-starter-code`
+1. cd into `labs/unit_03/angular/presidents-app/presidents-app-starter-code`
 1. `npm install`
 2. `node config/seeds.js`
 
@@ -301,5 +301,4 @@ Now that we have GETing down, it's up to you to try POSTing and DELETING. Just l
 ## Conclusion (5 mins)
 - How do you inject dependencies into an Angular controller?
 - How do you use $http to do a GET request?
-- Why did we start using `self` instead of `this`?
-- How do you do a POST request?
+- Why did we start using `vm` or `self` instead of `this`?
