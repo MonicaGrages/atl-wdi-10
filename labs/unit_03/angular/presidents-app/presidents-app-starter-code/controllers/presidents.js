@@ -17,6 +17,7 @@ router.post('/', function(req, res) {
   console.log('body:',req.body);
 
   var president = new President(req.body);
+  console.log(president);
 
   president.save(function(error) {
     if(error) res.json({messsage: 'Could not ceate president b/c:' + error});
@@ -28,7 +29,7 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res) {
   var id = req.params.id;
 
-  President.findById({_id: id}, 
+  President.findById({_id: id},
     function(error, president) {
       if(error) res.json({message: 'Could not find president b/c:' + error});
 
