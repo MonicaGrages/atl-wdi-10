@@ -82,15 +82,15 @@ When I order food at H&F, I get a receipt and a promise: "Go stand over there an
 
 ## Codealong Intro
 
-We've only been working with hardcoded data so far. Today that changes, it's time to kick it up a notch.
+We have only been working with hardcoded data so far. Today that changes, it's time to kick it up a notch.
 
-We're going to learn a little about two different functionalities in Angular that will allow us to start communicating with real data, accessed through an API. You'll need to dust off your knowledge of RESTful routes & AJAX, but hopefully that's a good thing.
+We are going to learn a little about two different functionalities in Angular that will allow us to start communicating with real data, accessed through an API. You'll need to dust off your knowledge of RESTful routes & AJAX, but hopefully that's a good thing.
 
-Now, since we're going to be interacting with an API, in an ideal world we'd force you to write one first. You totally could. But _because_ you could, and because we'd rather skip to the new stuff, let's use a pre-built backend for this lesson.
+Now, since we are going to be interacting with an API, in an ideal world we'd force you to write one first. You totally could. But _because_ you could, and because we'd rather skip to the new stuff, let's use a pre-built backend for this lesson.
 
 We want to make it fast, so we've already made you a sweet little Node API.
 
-Now, real quicklt – we might want a little seed data. 
+Now, real quickly – we might want to seed a little data first. 
 
 ## Demo of Starter Code (5 mins)
 
@@ -112,13 +112,15 @@ Once you have some seeds, start your server- `npm start`, open postman, and do a
 
 ![](https://i.imgur.com/QYHlWfm.png)
 
-##### &#x1F535; YOU DO - Set up your workspace
+#### &#x1F535; YOU DO - Set up your workspace
 
 Run through the steps above, and then add then take a minute to make some POST requests in postman to add some new presidents to our database.
 
 <br />
 
-Okay, so we have included a bunch of starter code that looks quite a bit like the code you have previously written. There's a controller, with some hard-coded data, listing out some of the Presidents in the United States. Hopefully [Wikipedia](https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States) is accurate, because who knows stuff like that off the top of their head?
+### $http + services
+
+Okay, so we have included starter code that looks quite a bit like the code you have previously written. There's a controller, with some hard-coded data, listing out some of the Presidents in the United States. Hopefully [Wikipedia](https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States) is accurate, because who knows stuff like that off the top of their head?
 
 It's our job to mush together this little API we have, and our Angular application.
 
@@ -218,7 +220,7 @@ function PresidentsController($http){
 
 We call `$http`, then our favorite HTTP verb, `.get`. There is one for `.post`, too. What's returned from our asynchronous call is a unique object called a **promise**. A promise can have three states: pending, fulfilled or rejected. We will use `.then()` (a method inherent to a promise object) to capture the callback when it's _done_ and the state is either fulfilled or rejected.  Then, we can pass `.then()` a function to overwrite our `.all` array with the response we get back.
 
-When we `console.log(response)`, we see everything that comes back. `.data` is just the data, `.presidents` is the key inside our JSON holding an array of presidents.
+When we `console.log(response.data)`, we see everything that comes back. `.data` is just the data, `.presidents` is the key inside our JSON holding an array of presidents.
 
 That's all we are doing in that function. Afterwords, we literally just run the function, which runs when we first load up the app. Easy.
 
@@ -263,7 +265,7 @@ function PresidentsController($http) {
 
 We are 3 functions deep when we call `this.all` – `this` is no longer referring to our controller, it's referring to the function inside `.then`. If you left it that way, you would never see any data, because to see it in the view, that data needs to be attached **directly** to our **controller**.
 
-So, what is a simple way to make sure we are scoped to the right place? A tiny little variable. The variable you choose is up to you, it's just preference, but `vm`, which stands for view model, is a best practice. So if we do:
+So, what is a simple way to make sure we are scoped to the right place? A tiny little variable. The variable you choose is up to you, it's just preference, but `var vm = this;`, which stands for view model, or `var self = this;` are best practices. So if we do:
 
 ```js
 function PresidentsController($http) {
