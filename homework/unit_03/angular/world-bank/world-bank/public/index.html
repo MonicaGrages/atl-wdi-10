@@ -9,23 +9,23 @@
 
   <div id="container">
     <h1 id="header">World Bank Loan Records Finder</h1>
-    <p id="subheader">Number of records: {{wbCtrl.count}} </p>
+    <p id="subheader">Number of records: {{wbCtrl.recordCount}} </p>
 
     <div id="left">
       <!-- Example HTML -->
-      <!--
-        <div>
-          <h3 class="region-title"> Bosnia and Herzegovina </h3>
-          <h4 class="project-name"> REAL ESTATE REGISTRATION PROJECT </h4>
+
+        <div ng-repeat='region in wbCtrl.regionList'>
+          <h3 class="region-title"> {{region}} </h3>
+<!--           <h4 class="project-name"> REAL ESTATE REGISTRATION PROJECT </h4>
           <p class="project-abstract">
             The objective of the Real Estate Registration Project for Bosnia and
             Herzegovina is to support development of a sustainable real estate
             registration system...
           </p>
           <span class="loan">Total loan: </span><span class="loanamnt">34100000</span>
-          <p>Year approved: 2013</p>
+          <p>Year approved: 2013</p> -->
         </div>
-      -->
+
     </div>
 
     <div id="right">

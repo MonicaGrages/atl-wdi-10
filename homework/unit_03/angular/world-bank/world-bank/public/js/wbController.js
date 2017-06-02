@@ -4,23 +4,29 @@ angular.module('worldbank', [])
 WorldBankController.$inject = ['$http'];
 
 function WorldBankController($http) {
-  console.log('hello');
   var vm = this;
-  vm.all = [];
-  vm.count = 0;
+  // vm.all = [];
+  vm.recordCount = 0;
 
 
-  function getWbInfo() {
+  function getRecordCount() {
     $http
       .get('/wbinfo/count')
       .then(function(response) {
-        vm.count = response.data;
-        console.log(vm.count);
+        vm.recordCount = response.data;
     });
   }
+  getRecordCount();
 
-  getWbInfo();
-
+  function getRegionList() {
+    $http
+      .get('/wbinfo/uniqueRegions')
+      .then(function(response) {
+        vm.regionList = response.data;
+        console.log(vm.regionList);
+      })
+  }
+  getRegionList();
 
 
 
