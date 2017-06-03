@@ -15,14 +15,12 @@
       <!-- Example HTML -->
 
         <div ng-repeat='region in wbCtrl.regionList'>
-          <h3 class="region-title"> {{region}} </h3>
-<!--           <h4 class="project-name"> REAL ESTATE REGISTRATION PROJECT </h4>
-          <p class="project-abstract">
-            The objective of the Real Estate Registration Project for Bosnia and
-            Herzegovina is to support development of a sustainable real estate
-            registration system...
+         <a ng-click='wbCtrl.getRecordsByRegionName(region)'><h3 class="region-title"> {{region}} </h3></a>
+          <!-- <h4 class="project-name"> REAL ESTATE REGISTRATION PROJECT </h4> -->
+          <p ng-repeat='record in wbCtrl.recordsByRegion' class="project-abstract"> {{record.projectabstract}}
+            <!-- The objective of the Real Estate Registration Project... -->
           </p>
-          <span class="loan">Total loan: </span><span class="loanamnt">34100000</span>
+<!--           <span class="loan">Total loan: </span><span class="loanamnt">34100000</span>
           <p>Year approved: 2013</p> -->
         </div>
 

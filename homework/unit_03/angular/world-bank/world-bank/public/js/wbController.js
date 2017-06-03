@@ -23,10 +23,22 @@ function WorldBankController($http) {
       .get('/wbinfo/uniqueRegions')
       .then(function(response) {
         vm.regionList = response.data;
-        console.log(vm.regionList);
+        // console.log(vm.regionList);
       })
   }
   getRegionList();
+
+  vm.getRecordsByRegionName = getRecordsByRegionName;
+  function getRecordsByRegionName (regionName) {
+    $http
+      .get('/wbinfo/byName/'+regionName)
+      .then(function(response) {
+        //this returns an array
+        vm.recordsByRegion = response.data;
+        console.log(vm.recordsByRegion);
+
+      })
+  }
 
 
 
