@@ -14,14 +14,14 @@
     <div id="left">
       <!-- Example HTML -->
 
-        <div ng-repeat='region in wbCtrl.regionList'>
-         <a ng-click='wbCtrl.getRecordsByRegionName(region)'><h3 class="region-title"> {{region}} </h3></a>
-          <!-- <h4 class="project-name"> REAL ESTATE REGISTRATION PROJECT </h4> -->
-          <p class="project-abstract" ng-show='region===record.region' ng-repeat='record in wbCtrl.recordsByRegion'> {{record.projectabstract}}
-            <!-- The objective of the Real Estate Registration Project... -->
+      <div ng-repeat='region in wbCtrl.regionList'>
+        <a ng-click='wbCtrl.getRecordsByRegionName(region)'><h3 class="region-title"> {{region}} </h3></a>
+        <div ng-show='region===record.region' ng-repeat='record in wbCtrl.recordsByRegion'>
+          <h4 class="project-name"> {{record.projectname}}</h4>
+          <p class="project-abstract"> {{record.projectabstract}}
           </p>
-<!--           <span class="loan">Total loan: </span><span class="loanamnt">34100000</span>
-          <p>Year approved: 2013</p> -->
+          <span class="loan">Total loan: </span><span class="loanamnt">{{record.loanamnt}}</span>
+          <p>Year approved: {{record.year}}</p>
         </div>
 
     </div>
