@@ -36,7 +36,6 @@ function WorldBankController($http) {
         //this returns an array
         vm.recordsByRegion = response.data;
         console.log(vm.recordsByRegion);
-
       })
   }
 
