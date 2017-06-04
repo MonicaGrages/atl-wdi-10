@@ -39,19 +39,5 @@ function WorldBankController($http) {
       })
   }
 
-  // vm.regionSearch = regionSearch;
-  // function regionSearch (regionNameSearched) {
-  //   console.log('region search called');
-  //   for(var i=0; i<vm.regionList.length; i++) {
-  //     if (vm.regionList[i] != regionNameSearched) {
-  //       regionNameSearched.notSearchedFor = true;
-  //     }
-  //   }
-  // }
-  // regionSearch('Federal Democratic Republic of Ethiopia');
-
-
-
-
 
 };

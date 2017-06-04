@@ -13,7 +13,7 @@
 
     <div id="left">
 
-      <div ng-repeat="region in wbCtrl.regionList | orderBy:'toString()'">
+      <div ng-repeat="region in wbCtrl.regionList | orderBy:'toString()' | filter:searchText">
         <a ng-click='wbCtrl.getRecordsByRegionName(region)' ng-hide='region.notSearchedFor'><h3 class="region-title"> {{region}} </h3></a>
         <div ng-show='region===record.region' ng-repeat='record in wbCtrl.recordsByRegion'>
           <h4 class="project-name"> {{record.projectname}}</h4>
@@ -29,7 +29,7 @@
     <div id="right">
       <div>
         <span class="search-text">Search for records by region:</span>
-        <input class="region-search" type="text" placeholder="region name">
+        <input ng-model='searchText' class="region-search" type="text" placeholder="region name">
         <ul>
           <!-- EXAMPLE HTML -->
           <!--
