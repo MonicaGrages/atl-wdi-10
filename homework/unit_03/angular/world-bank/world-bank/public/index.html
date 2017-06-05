@@ -14,7 +14,7 @@
     <div id="left">
 
       <div ng-repeat="region in wbCtrl.regionList | orderBy:'toString()' | filter:searchText">
-        <a ng-click='wbCtrl.getRecordsByRegionName(region)' ng-hide='region.notSearchedFor'><h3 class="region-title"> {{region}} </h3></a>
+        <a ng-click='wbCtrl.getRecordsByRegionName(region)'><h3 class="region-title"> {{region}} </h3></a>
         <div ng-show='region===record.region' ng-repeat='record in wbCtrl.recordsByRegion'>
           <h4 class="project-name"> {{record.projectname}}</h4>
           <p class="project-abstract"> {{record.projectabstract}}
@@ -40,13 +40,13 @@
 
       <div id="new-record-container">
         <p id="new-record-title">ADD NEW RECORD</p>
-        <form name="newRecordForm">
-          <input class="new-record-input" type="text" placeholder="region name">
-          <input class="new-record-input" type="text" placeholder="project name">
-          <textarea class="new-record-input new-project-abstract"
+        <form name="newRecordForm" ng-submit='wbCtrl.addRecord()'>
+          <input ng-model='wbCtrl.newRecord.region' class="new-record-input" type="text" placeholder="region name">
+          <input ng-model='wbCtrl.newRecord.projectname' class="new-record-input" type="text" placeholder="project name">
+          <textarea ng-model='wbCtrl.newRecord.projectabstract'class="new-record-input new-project-abstract"
             type="text" placeholder="project abstract"></textarea>
-          <input class="new-record-input" type="text" placeholder="year approved">
-          <input class="new-record-input" type="text" placeholder="loan amount">
+          <input ng-model='wbCtrl.newRecord.year' class="new-record-input" type="text" placeholder="year approved">
+          <input ng-model='wbCtrl.newRecord.loanamnt' class="new-record-input" type="text" placeholder="loan amount">
           <button id="new-record-submit" type="submit">SUBMIT</button>
         </form>
       </div>

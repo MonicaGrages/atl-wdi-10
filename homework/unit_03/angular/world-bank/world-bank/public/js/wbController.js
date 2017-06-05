@@ -5,9 +5,14 @@ WorldBankController.$inject = ['$http'];
 
 function WorldBankController($http) {
   var vm = this;
-  // vm.all = [];
-  vm.recordCount = 0;
+  vm.activate = activate;
 
+  function activate() {
+    vm.getRecordsByRegionName = getRecordsByRegionName;
+    vm.addRecord = addRecord;
+    getRecordCount();
+    getRegionList();
+  }
 
   function getRecordCount() {
     $http
@@ -16,7 +21,6 @@ function WorldBankController($http) {
         vm.recordCount = response.data;
     });
   }
-  getRecordCount();
 
   function getRegionList() {
     $http
@@ -26,9 +30,7 @@ function WorldBankController($http) {
         // console.log(vm.regionList);
       })
   }
-  getRegionList();
 
-  vm.getRecordsByRegionName = getRecordsByRegionName;
   function getRecordsByRegionName (regionName) {
     $http
       .get('/wbinfo/byName/'+regionName)
@@ -39,5 +41,14 @@ function WorldBankController($http) {
       })
   }
 
+  function addRecord() {
+    $http
+      .post('/wbinfo', vm.newRecord)
+      .then(function(response) {
+        vm.activate();
+        vm.getRecordsByRegionName(response.data.region);
+      })
+  }
 
+  activate();
 };
