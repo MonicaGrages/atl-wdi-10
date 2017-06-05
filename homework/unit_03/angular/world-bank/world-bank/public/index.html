@@ -19,7 +19,7 @@
           <h4 class="project-name"> {{record.projectname}}</h4>
           <p class="project-abstract"> {{record.projectabstract}}
           </p>
-          <span class="loan">Total loan: </span><span class="loanamnt">{{record.loanamnt}}</span>
+          <span class="loan">Total loan: </span><span class="loanamnt">{{record.loanamnt | currency}}</span>
           <p>Year approved: {{record.year}}</p>
         </div>
       </div>
