@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <title>Infamous Criminals</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/criminalsController.js"></script>
+  <script src='js/criminalsService.js'></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app='InfamousCriminals'>
@@ -21,10 +24,13 @@
     </ul>
 
 
-    <form ng-submit="criminals.addCriminal()" id="newCriminal">
+    <form ng-submit="criminals.addCriminal()" id="newCriminal" name='myForm' novalidate>
       <div>
         <label for="newCriminal-name">Name:</label>
-        <input type="text" id="newCriminal-name" ng-model="criminals.newCriminal.name" placeholder="Prof. Moriarty">
+        <input type="text" id="newCriminal-name" name='newCriminal-name' ng-model="criminals.newCriminal.name" placeholder="Prof. Moriarty" required>
+      </div>
+      <div class="error-messages" ng-messages="myForm.newCriminal-name.$error">
+        <div ng-message="required">Criminal name is required</div>
       </div>
       <div>
         <label for="newCriminal-location">Location:</label>
@@ -40,9 +46,14 @@
         </select>
       </div>
       <div>
-        <input type="submit" value="Add Criminal">
+        <input type="submit" value="Add Criminal" >
       </div>
     </form>
+
+  <hr/>
+  <hh>Some debugging output:</h4>
+  <pre>myForm.$valid         = {{ myForm.$valid         | json }}</pre>
+  <pre>myForm.newCriminal-name.$error    = {{ myForm.newCriminal-name.$error    | json }}</pre>
 
   </section>
 
