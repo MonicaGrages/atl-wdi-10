@@ -8794,9 +8794,10 @@ exports.UrlRouterProvider = UrlRouterProvider;
 var angular = __webpack_require__(30);
 __webpack_require__(87);
 
-angular.module('RonSwansonApp', ['ui.router']);
+angular.module('RonSwansonApp', ['ui.router']).config(uiRouterSetup);
 
-// Set up your UI Router HERE
+// Set up your UI Router
+uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 /***/ }),
 /* 59 */

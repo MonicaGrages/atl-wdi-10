@@ -4,4 +4,8 @@ var Quote = require('../../models/quote.js');
 
 //your routes here
 
+router.get('/', function (request, response) {
+  console.log('backend router.get');
+})
+
 module.exports = router;
