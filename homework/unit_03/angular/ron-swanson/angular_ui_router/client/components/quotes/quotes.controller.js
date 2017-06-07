@@ -8,7 +8,6 @@ function QuotesController(QuotesService) {
   vm.quote="";
   vm.savedQuotes = null;
 
-
   vm.getQuote = getQuote;
   function getQuote() {
     QuotesService.getQuote()
@@ -18,8 +17,14 @@ function QuotesController(QuotesService) {
   }
 
   vm.saveQuote = saveQuote;
-  function saveQuote(quoteToSave) {
-    QuotesService.saveQuote();
+  function saveQuote() {
+    QuotesService.saveQuote(vm.quote)
+      .then(function (response) {
+        // console.log(response.data.$$state.value.config.data);
+        // console.log(response);
+        // savedQuotes.push(response);
+      })
+    vm.quote = '';
   }
 
   vm.getSavedQuotes = getSavedQuotes;

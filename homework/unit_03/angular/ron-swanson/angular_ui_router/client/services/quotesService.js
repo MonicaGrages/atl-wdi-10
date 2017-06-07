@@ -20,8 +20,14 @@ function QuotesService($http) {
     console.log('service needs to get saved quotes now');
   }
 
-  function saveQuote() {
+  function saveQuote(quoteString) {
     console.log('service needs to save this quote now');
+    console.log(quoteString);
+    let savedQuote = $http
+      .post('/quotes', {quote: quoteString});
+      // console.log(savedQuote);
+      return savedQuote;
+      // console.log(savedQuote);
   }
 
 }
