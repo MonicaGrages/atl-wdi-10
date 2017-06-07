@@ -16,7 +16,7 @@ function CriminalsService($http) {
 	// HOW IT DOES STUFF
 	function create(criminalData) {
 		return $http
-			.post('/api/criminals', criminalData);
+			.post('/api/criminals', criminalData); //this needs to match the path in the backend router
 	}
 
 	function loadAll() {

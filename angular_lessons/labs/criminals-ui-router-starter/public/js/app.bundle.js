@@ -8927,12 +8927,13 @@ var angular = __webpack_require__(30);
 __webpack_require__(92);
 
 angular.module('criminals', ['ui.router']).config(uiRouterSetup);
+//uiRouterSetup is a fx we write. see below.
 
 uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 //this is where we set up the different states of our app
 function uiRouterSetup($stateProvider, $urlRouterProvider) {
-	$stateProvider.state('home', {
+	$stateProvider.state('home', { //this is a reference to the ui-sref or state reference on the index.html
 		url: '/', //this is the url you want in your browser
 		template: '<home></home>' //this is the name of the component you created
 	}).state('about', {
@@ -8945,6 +8946,7 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 	}).state('criminalsNew', {
 		url: '/criminals/new',
 		template: '<criminals-new></criminals-new>'
+		//this corresponds to criminalsNew in the component name (criminals.new.component)
 	}).state('criminalsShow', {
 		url: '/criminals/:criminalId',
 		template: '<criminals-show></criminals-show>'
@@ -8986,6 +8988,7 @@ var component = {
 };
 
 angular.module('criminals').component('criminalsNew', component);
+//when you call this in the actual HTML element or in app.js template key-value pair it should be called <criminals-new>
 
 /***/ }),
 /* 66 */
@@ -9059,7 +9062,7 @@ function CriminalsService($http) {
 
 	// HOW IT DOES STUFF
 	function create(criminalData) {
-		return $http.post('/api/criminals', criminalData);
+		return $http.post('/api/criminals', criminalData); //this needs to match the path in the backend router
 	}
 
 	function loadAll() {

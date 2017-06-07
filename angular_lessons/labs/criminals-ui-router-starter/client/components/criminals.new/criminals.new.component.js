@@ -9,3 +9,4 @@ const component = {
 angular
 	.module('criminals')
 	.component('criminalsNew', component);
+  //when you call this in the actual HTML element or in app.js template key-value pair it should be called <criminals-new>
