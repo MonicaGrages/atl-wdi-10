@@ -7,4 +7,10 @@ angular.module('RonSwansonApp', ['ui.router'])
 // Set up your UI Router
 uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-
+function uiRouterSetup($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('quotes', {
+      url: '/quotes',
+      template: '<quotes></quotes'
+    });
+}
