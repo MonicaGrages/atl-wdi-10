@@ -6,9 +6,18 @@
   <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>
 
   <ul>
-    <li>{{$ctrl.quote}}</li>
+    <li id='ronSwansonQuote'>{{$ctrl.quote}}</li>
   </ul>
 
-  <h3>See All my saved quotes</h3>
+  <h3 ng-click='$ctrl.getSavedQuotes()'>See All my saved quotes</h3>
+
+  <div ng-show=''>
+    <hr>
+    <ul>
+      <li ng-repeat='quote in $ctrl.savedQuotes'>
+        {{quote}}
+      </li>
+    </ul>
+  </div>
 
 </section>

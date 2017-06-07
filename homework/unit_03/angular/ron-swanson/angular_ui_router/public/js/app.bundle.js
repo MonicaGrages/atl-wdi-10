@@ -5117,23 +5117,35 @@ module.exports = angular;
 "use strict";
 
 
-console.log("Quotes Controller Works!");
+// console.log("Quotes Controller Works!")
 
 QuotesController.$inject = ['QuotesService'];
 
 //Your QUOTES CONTROLLER HERE!
 function QuotesController(QuotesService) {
   var vm = this;
-  // vm.quote = {};
   vm.quote = "Ron Swanson Quote Goes Here";
+  vm.savedQuotes = ['Clear alcohols are for rich women on diets.'];
 
   vm.getQuote = getQuote;
   function getQuote() {
-    console.log('make an API call to get a quote');
     QuotesService.getQuote().then(function (response) {
-      // console.log(response.data[0]);
       vm.quote = response.data[0];
+      //this should all just be an ng-show, right?
+      // var quotePlace = document.getElementById('ronSwansonQuote');
+      // var saveButton = document.createElement("button");
+      // quotePlace.appendChild(saveButton);
     });
+  }
+
+  vm.saveQuote = saveQuote;
+  function saveQuote(quoteToSave) {
+    QuotesService.saveQuote();
+  }
+
+  vm.getSavedQuotes = getSavedQuotes;
+  function getSavedQuotes() {
+    QuotesService.getSavedQuotes();
   }
 }
 
@@ -8861,11 +8873,10 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-console.log("Netflix Controller works!");
+// console.log("Netflix Controller works!");
 
 //your Netflix Controller Here
+
 
 /***/ }),
 /* 64 */
@@ -8897,13 +8908,21 @@ QuotesService.$inject = ['$http'];
 
 function QuotesService($http) {
   var self = this;
-
   self.getQuote = getQuote;
+  self.getSavedQuotes = getSavedQuotes;
+  self.saveQuote = saveQuote;
 
   function getQuote() {
-    var quote = $http.get('http://ron-swanson-quotes.herokuapp.com/v2/quotes'
-    // console.log(quote);
-    );return quote;
+    var quote = $http.get('http://ron-swanson-quotes.herokuapp.com/v2/quotes');
+    return quote;
+  }
+
+  function getSavedQuotes() {
+    console.log('service needs to get saved quotes now');
+  }
+
+  function saveQuote() {
+    console.log('service needs to save this quote now');
   }
 }
 
@@ -44555,7 +44574,7 @@ $provide.value("$locale", {
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"quotes\">\n<!-- All your code goes inside this <section> -->\n\n  <h1>RON SWANSON QUOTE OF THE DAY</h1>\n\n  <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>\n\n  <ul>\n    <li>{{$ctrl.quote}}</li>\n  </ul>\n\n  <h3>See All my saved quotes</h3>\n\n</section>\n";
+module.exports = "<section id=\"quotes\">\n<!-- All your code goes inside this <section> -->\n\n  <h1>RON SWANSON QUOTE OF THE DAY</h1>\n\n  <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>\n\n  <ul>\n    <li id='ronSwansonQuote'>{{$ctrl.quote}}</li>\n  </ul>\n\n  <h3 ng-click='$ctrl.getSavedQuotes()'>See All my saved quotes</h3>\n\n  <div ng-show=''>\n    <hr>\n    <ul>\n      <li ng-repeat='quote in $ctrl.savedQuotes'>\n        {{quote}}\n      </li>\n    </ul>\n  </div>\n\n</section>\n";
 
 /***/ }),
 /* 97 */
