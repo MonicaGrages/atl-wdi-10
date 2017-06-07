@@ -20,7 +20,6 @@ function CriminalsService($http) {
     var criminalDeletePromise = $http.delete('/criminals/'+criminalId);
     return criminalDeletePromise;
   }
-
 }
 
 angular.module('InfamousCriminals')

@@ -1,4 +1,4 @@
-angular.module('worldbank', [])
+angular.module('worldbank')
   .controller('WorldBankController', WorldBankController);
 
 WorldBankController.$inject = ['$http'];

@@ -1,0 +1,2 @@
+angular.module('InfamousCriminals', [])
+  .controller()

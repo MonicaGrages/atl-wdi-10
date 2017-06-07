@@ -1,6 +1,4 @@
-angular
-    .module('moviesApp')
-    .controller('MoviesController', MoviesController);
+
 
 function MoviesController() {
     var vm = this;
@@ -13,3 +11,5 @@ function MoviesController() {
         { title: 'The Bicycle Thief', year: 1948 }
     ]
 }
+
+module.exports = MoviesController;
