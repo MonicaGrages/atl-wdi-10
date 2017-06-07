@@ -1,26 +1,22 @@
 console.log("Quotes Controller Works!")
 
-QuotesController.$inject = ['$http'];
+QuotesController.$inject = ['QuotesService'];
 
 //Your QUOTES CONTROLLER HERE!
-function QuotesController($http) {
+function QuotesController(QuotesService) {
   let vm = this;
     // vm.quote = {};
-    vm.quote="hi i'm ron swanson";
+    vm.quote="Ron Swanson Quote Goes Here";
 
-  // activate();
-  // function activate () {
-  //   getQuote();
-  // }
 
   vm.getQuote = getQuote;
   function getQuote() {
     console.log('make an API call to get a quote');
-    let quote = $http
-      .get('http://ron-swanson-quotes.herokuapp.com/v2/quotes');
-    console.log(quote);
-    return quote;
-
+    QuotesService.getQuote()
+      .then(function (response) {
+        // console.log(response.data[0]);
+        vm.quote = response.data[0];
+      })
   }
 
 }
