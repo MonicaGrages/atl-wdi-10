@@ -21,7 +21,7 @@ function QuotesController(QuotesService) {
     QuotesService.saveQuote(vm.quote)
       .then(function (response) {
         // console.log(response.data.$$state.value.config.data);
-        // console.log(response);
+        console.log(response);
         // savedQuotes.push(response);
       })
     vm.quote = '';

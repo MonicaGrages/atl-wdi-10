@@ -12,7 +12,8 @@ router.get('/', function (request, response) {
 //FOR SAVING A FAVORITE QUOTE
 router.post('/', function (request, response) {
   console.log('this is the backend post fx');
-  var quote = new Quote(request.body);
+  console.log(request.body.quote);
+  var quote = new Quote({quote: request.body.quote});
   quote.save(function(error) {
     if(error){
       console.log('error saving new quote: '+error);
