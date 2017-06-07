@@ -5125,11 +5125,12 @@ console.log("Quotes Controller Works!"
   // vm.quote = {};
   vm.quote = "hi i'm ron swanson";
 
-  activate();
-  function activate() {
-    getQuote();
-  }
+  // activate();
+  // function activate () {
+  //   getQuote();
+  // }
 
+  vm.getQuote = getQuote;
   function getQuote() {
     console.log('make an API call to get a quote');
   }
@@ -44530,7 +44531,7 @@ $provide.value("$locale", {
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"quotes\">\n<!-- All your code goes inside this <section> -->\n\n  <h1>RON SWANSON QUOTE OF THE DAY</h1>\n\n  <button>Get Swansonized</button>\n\n  <ul>\n    <li>{{$ctrl.quote}}</li>\n  </ul>\n\n  <h3>See All my saved quotes</h3>\n\n</section>\n";
+module.exports = "<section id=\"quotes\">\n<!-- All your code goes inside this <section> -->\n\n  <h1>RON SWANSON QUOTE OF THE DAY</h1>\n\n  <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>\n\n  <ul>\n    <li>{{$ctrl.quote}}</li>\n  </ul>\n\n  <h3>See All my saved quotes</h3>\n\n</section>\n";
 
 /***/ }),
 /* 96 */

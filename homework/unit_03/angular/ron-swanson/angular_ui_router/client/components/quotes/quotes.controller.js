@@ -6,11 +6,12 @@ function QuotesController() {
     // vm.quote = {};
     vm.quote="hi i'm ron swanson";
 
-  activate();
-  function activate () {
-    getQuote();
-  }
+  // activate();
+  // function activate () {
+  //   getQuote();
+  // }
 
+  vm.getQuote = getQuote;
   function getQuote() {
     console.log('make an API call to get a quote');
   }
