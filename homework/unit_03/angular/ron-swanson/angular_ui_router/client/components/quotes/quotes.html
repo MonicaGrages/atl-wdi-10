@@ -5,13 +5,18 @@
 
   <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>
 
-  <ul>
-    <li id='ronSwansonQuote'>{{$ctrl.quote}}</li>
+  <ul ng-show='$ctrl.quote'>
+    <li id='ronSwansonQuote'>
+      {{$ctrl.quote}}
+      <button ng-click='$ctrl.saveQuote()'>Save Quote</button>
+    </li>
   </ul>
 
-  <h3 ng-click='$ctrl.getSavedQuotes()'>See All my saved quotes</h3>
+  <h3 ng-click='$ctrl.getSavedQuotes()' ng-hide='$ctrl.savedQuotes'>See All my saved quotes</h3>
+  <h3 ng-click='$ctrl.hideSavedQuotes()' ng-show='$ctrl.savedQuotes'>Hide All my saved quotes</h3>
 
-  <div ng-show=''>
+
+  <div ng-show='$ctrl.savedQuotes'>
     <hr>
     <ul>
       <li ng-repeat='quote in $ctrl.savedQuotes'>
