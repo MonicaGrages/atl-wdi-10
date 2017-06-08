@@ -20,7 +20,6 @@ function QuotesController(QuotesService) {
   function saveQuote() {
     QuotesService.saveQuote(vm.quote)
       .then(function (response) {
-        console.log(response);
         // savedQuotes.push(response);
       })
     vm.quote = '';
@@ -32,15 +31,8 @@ function QuotesController(QuotesService) {
     QuotesService.getSavedQuotes()
       .then(function(response) {
         vm.savedQuotes = response.data.quotes;
-        console.log(vm.savedQuotes);
       })
   }
-
-  vm.hideSavedQuotes = hideSavedQuotes;
-  function hideSavedQuotes() {
-    vm.savedQuotes = null;
-  }
-
 
 }
 
