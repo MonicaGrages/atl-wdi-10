@@ -6,7 +6,7 @@ QuotesController.$inject = ['QuotesService'];
 function QuotesController(QuotesService) {
   let vm = this;
   vm.quote="";
-  vm.savedQuotes = null;
+  vm.savedQuotes = [];
 
   vm.getQuote = getQuote;
   function getQuote() {
@@ -20,9 +20,8 @@ function QuotesController(QuotesService) {
   function saveQuote() {
     QuotesService.saveQuote(vm.quote)
       .then(function (response) {
-        // savedQuotes.push(response);
+        vm.savedQuotes.push({quote: vm.quote});
       })
-    vm.quote = '';
   }
 
   vm.getSavedQuotes = getSavedQuotes;
