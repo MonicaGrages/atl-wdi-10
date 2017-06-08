@@ -17,7 +17,11 @@ function QuotesService($http) {
   }
 
   function getSavedQuotes() {
-    console.log('service needs to get saved quotes now');
+    // console.log('service needs to get saved quotes now');
+    let savedQuotes = $http
+      .get('/quotes');
+      // console.log(savedQuotes);
+      return savedQuotes;
   }
 
   function saveQuote(quoteString) {

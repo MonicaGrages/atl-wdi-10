@@ -20,7 +20,6 @@ function QuotesController(QuotesService) {
   function saveQuote() {
     QuotesService.saveQuote(vm.quote)
       .then(function (response) {
-        // console.log(response.data.$$state.value.config.data);
         console.log(response);
         // savedQuotes.push(response);
       })
@@ -30,7 +29,11 @@ function QuotesController(QuotesService) {
   vm.getSavedQuotes = getSavedQuotes;
   function getSavedQuotes() {
     vm.savedQuotes = ['Clear alcohols are for rich women on diets.'];
-    QuotesService.getSavedQuotes();
+    QuotesService.getSavedQuotes()
+      .then(function(response) {
+        vm.savedQuotes = response.data.quotes;
+        console.log(vm.savedQuotes);
+      })
   }
 
   vm.hideSavedQuotes = hideSavedQuotes;

@@ -11,6 +11,6 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('quotes', {
       url: '/quotes',
-      template: '<quotes></quotes'
+      template: '<quotes></quotes>'
     });
 }

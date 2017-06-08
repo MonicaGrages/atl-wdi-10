@@ -4,12 +4,20 @@ var Quote = require('../../models/quote.js');
 
 //your routes here
 
+//GET ALL THE QUOTES
 router.get('/', function (request, response) {
   console.log('backend router.get');
+  Quote.find(function(error, quotes) {
+    if(error) {
+      response.json({message: error});
+      return;
+    }
+    response.json({quotes: quotes});
+  })
 })
 
 
-//FOR SAVING A FAVORITE QUOTE
+//BACKEND ROUTE FOR SAVING A FAVORITE QUOTE
 router.post('/', function (request, response) {
   console.log('this is the backend post fx');
   console.log(request.body.quote);
