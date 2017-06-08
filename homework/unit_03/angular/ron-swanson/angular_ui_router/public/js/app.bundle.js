@@ -5148,6 +5148,13 @@ function QuotesController(QuotesService) {
       vm.savedQuotes = response.data.quotes;
     });
   }
+
+  vm.deleteQuote = deleteQuote;
+  function deleteQuote(quoteId) {
+    QuotesService.deleteQuote(quoteId).then(function (response) {
+      console.log(response);
+    });
+  }
 }
 
 module.exports = QuotesController;
@@ -8912,6 +8919,7 @@ function QuotesService($http) {
   self.getQuote = getQuote;
   self.getSavedQuotes = getSavedQuotes;
   self.saveQuote = saveQuote;
+  self.deleteQuote = deleteQuote;
 
   function getQuote() {
     var quote = $http.get('http://ron-swanson-quotes.herokuapp.com/v2/quotes');
@@ -8927,6 +8935,8 @@ function QuotesService($http) {
     var savedQuote = $http.post('/quotes', { quote: quoteString });
     return savedQuote;
   }
+
+  function deleteQuote(quoteId) {}
 }
 
 /***/ }),
@@ -44577,7 +44587,7 @@ $provide.value("$locale", {
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"quotes\">\n<!-- All your code goes inside this <section> -->\n\n  <h1>RON SWANSON QUOTE OF THE DAY</h1>\n\n  <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>\n\n  <ul ng-show='$ctrl.quote'>\n    <li id='ronSwansonQuote'>\n      {{$ctrl.quote}}\n      <button ng-click=\"$ctrl.saveQuote()\">Save Quote</button>\n    </li>\n  </ul>\n\n  <h3 ng-click='$ctrl.getSavedQuotes()' >See All my saved quotes</h3>\n\n  <div ng-show='$ctrl.savedQuotes'>\n    <hr>\n    <ul>\n      <li ng-repeat='quote in $ctrl.savedQuotes'>\n        {{quote.quote}}\n      </li>\n    </ul>\n  </div>\n\n</section>\n";
+module.exports = "<section id=\"quotes\">\n<!-- All your code goes inside this <section> -->\n\n  <h1>RON SWANSON QUOTE OF THE DAY</h1>\n\n  <button ng-click='$ctrl.getQuote()'>Get Swansonized</button>\n\n  <ul ng-show='$ctrl.quote'>\n    <li id='ronSwansonQuote'>\n      {{$ctrl.quote}}\n      <button ng-click=\"$ctrl.saveQuote()\">Save Quote</button>\n    </li>\n  </ul>\n\n  <h3 ng-click='$ctrl.getSavedQuotes()' >See All my saved quotes</h3>\n\n  <div ng-show='$ctrl.savedQuotes'>\n    <hr>\n    <ul>\n      <li ng-repeat='quote in $ctrl.savedQuotes'>\n        {{quote.quote}}\n        <button ng-click='$ctrl.deleteQuote(quote._id)'>Delete this Quote</button>\n      </li>\n    </ul>\n  </div>\n\n</section>\n";
 
 /***/ }),
 /* 97 */

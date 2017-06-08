@@ -33,6 +33,14 @@ function QuotesController(QuotesService) {
       })
   }
 
+  vm.deleteQuote = deleteQuote;
+  function deleteQuote(quoteId) {
+    QuotesService.deleteQuote(quoteId).
+      then(function(response) {
+        console.log(response);
+      })
+  }
+
 }
 
 module.exports = QuotesController;

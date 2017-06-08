@@ -9,6 +9,7 @@ function QuotesService($http) {
   self.getQuote = getQuote;
   self.getSavedQuotes = getSavedQuotes;
   self.saveQuote = saveQuote;
+  self.deleteQuote = deleteQuote;
 
   function getQuote() {
     let quote = $http
@@ -26,6 +27,10 @@ function QuotesService($http) {
     let savedQuote = $http
       .post('/quotes', {quote: quoteString});
       return savedQuote;
+  }
+
+  function deleteQuote(quoteId) {
+
   }
 
 }
