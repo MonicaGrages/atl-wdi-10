@@ -6,3 +6,9 @@
 6. nfl=# SELECT * FROM players ORDER BY salary DESC LIMIT 50;
 7. nfl=# SELECT AVG(salary) FROM players;
 8. nfl=# SELECT name, position FROM players WHERE salary > 10000000;
+9. nfl=# SELECT * FROM players ORDER BY salary DESC LIMIT 1;
+10. nfl=# SELECT name, position FROM players ORDER BY salary LIMIT 100;
+11. nfl=# SELECT AVG(salary) FROM players WHERE position = 'DE';
+12. nfl=# SELECT name FROM players WHERE team_id IN (SELECT id FROM teams WHERE name = 'Buffalo Bills');
+13. nfl=# SELECT SUM(salary) FROM players WHERE team_id IN (SELECT id FROM teams WHERE name = 'New York Giants');
+14. nfl=# SELECT MIN(salary) FROM players WHERE team_id IN (SELECT id FROM teams WHERE name = 'Green Bay Packers');
