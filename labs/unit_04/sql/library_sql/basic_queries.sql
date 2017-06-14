@@ -27,7 +27,7 @@ SELECT title FROM books;
 SELECT publication_date FROM books WHERE title = 'A Dance with Dragons';
 
 -- Get all books which have `the` somewhere in their title (hint, look up LIKE/ILIKE)
-SELECT * FROM books WHERE title ILIKE '%the%';
+SELECT * FROM books WHERE title ILIKE '% the %' OR title ILIKE '% the' OR title ILIKE 'the %';SELECT * FROM books WHERE title ILIKE '% the %' OR title ILIKE '%the' OR title ILIKE 'the%';
 
 -- Add yourself as an author
 INSERT INTO authors(name, nationality, birth_year) VALUES ('Monica Grages', 'United States of America', 1989);
