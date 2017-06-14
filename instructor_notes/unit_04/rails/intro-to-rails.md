@@ -93,7 +93,7 @@ Let's go into the cookbook folder:
 Here's a list of all the files and folders that were magically created
 by the `rails new` command:
 
-```bash
+```text
 .
 ├── Gemfile
 ├── Gemfile.lock
@@ -202,7 +202,7 @@ by the `rails new` command:
 Wow, that's a lot of stuff.
 For reference, here's a list of just the top-level folders:
 
-```bash
+```text
 ├── app
 ├── bin
 ├── config
@@ -332,7 +332,7 @@ You should get an error message. Read it -- what does the first line say?
     > **{ Common Pitfall }**
     >
     > If `rails db:create` fails, it's probably because your database server
-    > isn't running. Since we're using the Postgres app, just make sure it's on
+    > isn't running. If you're using the Postgres app, just make sure it's on
     > by checking for the blue elephant on your menu bar.
 
     Let's check the server again. What do we have now?
@@ -592,14 +592,14 @@ DO NOT TRY TO MIGRATE YET. We need to set up our migrations first.
     > The name of the migration should be in camelcase, start with the name
     > of what your script does, and end with the (plural) name of your resource.
     >
-    > BAD
-    > `rails g migration users`
-    > `rails g migration AddUser`
-    > `rails g migration CreateUser`
-    > GOOD
-    > `rails g migration CreateUsers`
-    > `rails g migration AddFieldToUsers`
-    > `rails g migration RemoveFieldFromUsers`
+    > BAD <br/>
+    > `rails g migration users` <br/>
+    > `rails g migration AddUser` <br/>
+    > `rails g migration CreateUser` <br/>
+    > GOOD <br/>
+    > `rails g migration CreateUsers` <br/>
+    > `rails g migration AddFieldToUsers` <br/>
+    > `rails g migration RemoveFieldFromUsers` <br/>
 
     We can see from the output that it has created a new directory, `migrate`,
     and a file for us inside of the `db` directory. This file is a migration
