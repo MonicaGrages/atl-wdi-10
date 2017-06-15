@@ -14,7 +14,7 @@ CREATE TABLE apartments (
   price INTEGER
 );
 
-CREATE TABLE office (
+CREATE TABLE offices (
   id SERIAL PRIMARY KEY,
   office_number INTEGER,
   floors INTEGER,
@@ -27,7 +27,7 @@ CREATE TABLE office (
   price INTEGER
 );
 
-CREATE TABLE storefront (
+CREATE TABLE storefronts (
   id SERIAL PRIMARY KEY,
   address VARCHAR NOT NULL,
   occupied BOOLEAN,
