@@ -6,4 +6,4 @@
 6. realty=# SELECT * FROM storefronts WHERE has_kitchen = true;
 7. realty=# SELECT * FROM storefronts WHERE has_outdoor_seating = true ORDER BY sq_footage LIMIT 1;
 8. realty=# SELECT * FROM offices ORDER BY cubicles ASC LIMIT 1;
-9.
+9. realty=# SELECT * FROM offices ORDER BY cubicles DESC, bathrooms DESC LIMIT 1;
