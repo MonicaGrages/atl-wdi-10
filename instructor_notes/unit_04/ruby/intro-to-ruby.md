@@ -95,7 +95,10 @@ def hello(name, salutation, small_talk, punctuation)
 end
 ```
 
+
 Well that looks pretty similar, is there any behavior differences?
+
+Notice the built in string templating! No more `"string" + "math!"`
 
 First, define the behaviors of arguments in JS
 
@@ -154,6 +157,25 @@ In Ruby, returns are implicit by design. Ruby will always assume that the last l
 
 Can you read it in English? One of Ruby's biggest benefitsis that it reads pretty closely to English
 
+Additionally, you can add the statements `if` and `unless` to your return statement, which acts similarly to an if block.
+
+```javascript
+function apiCall(err, data){
+  if (err){
+    return err;
+  } 
+  //Do stuff
+}
+```
+
+vs.
+
+```ruby
+def api_call(err, data)
+  return err if err
+  #Do Stuff
+end
+```
 
 ## Bang methods and predicate methods
 #### bang methods
@@ -216,58 +238,13 @@ genius = "me"
 
 Important to know how to use 'em. But that's only one type of variable, and there are a few.
 
-### Types of Variables
-
-Variables, of course, are just placeholders.
-
-Let's talk about the different types of variables you'll encounter in Ruby. You'll need to use all of them at some point, but some more than others.
-
-In these examples, we'll defined a variable, and then we'll write a tiny quick method that just spits that variable out, to see if it works.
-
-#### Local Variable
-
-A local variable (lower_snake_case) is a quick placeholder, and gets forgotten as soon as your method or function is over.
-
-```ruby
-some_variable = "donuts"
-
-def some_method
-  some_variable
-end
-
-some_variable # => "donuts"
-              # because we're using it in the same place we defined it
-
-some_method   # Run our method, when it was defined outside that method –
-              # NameError: undefined local variable [blah blah blah]
-```
-
-These are great when you just need to temporarily store something or quickly give something a readable variable name, but won't need it later.
-
-#### Instance Variable
-
-An instance variable (lower_snake_case) is a variable that is defined in an instance of an object. That's not meant to be a fancy term - an instance is just an example of an object, one thingy in the great world of things.
-
-```ruby
-@some_variable = "donuts" # "donuts"
-
-def some_method
-  @some_variable
-end
-
-@some_variable # => "donuts"
-some_method # => "donuts"
-```
-
-Remember that it works this way, because when we get to Objects/Classes later this week, you'll see that instance variables let us store a variable once and use it however many methods we need inside an Class.
-
-
 ## Loop syntax: Differences between JS and Ruby
 
 Loops work almost exactly the same as JS, but use a slightly different syntax.
 
 What are some different ways that you can loop in JavaScript?
 
+While there are plenty of ways to loop in Ruby, we're going to focus on 2 specific ways to write loops.
 
 ### .each is going to be your go to
 
@@ -282,6 +259,21 @@ end
 ```
 
 The big distinction here is the `do`, `end`, and the `|pipes|`
+
+
+### .map is great for mutating your data
+
+.map is very similar to .each, except this one transforms your Array or Hash into whatever is returned in the body of your method
+
+```ruby
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+double_alphabet = alphabet.map do |letter|
+  letter * 2
+end
+
+puts double_alphabet
+```
 
 #### Do and end
 
@@ -396,7 +388,7 @@ Two new ones
 
 #### Duck-typing
 
-Unlike JavaScript, Ruby has both and Integer and a Float class. This creates some interesting results! Let's take a look in IRB:
+Unlike JavaScript, Ruby has both and Integer and a Float class. This creates some interesting results! Let's take a look in Pry:
 
 What happens if we do:
 
@@ -522,9 +514,38 @@ end
 
 Isn't that just so incredibly readable?
 
+#### Ranges
+Another new feature we will find in Ruby is ranges.  Ranges look like this
+`(1..5)` and signifies all of the values between the start and end numbers.  This is really usefull when getting several items from an array.
+
+```ruby
+days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+
+puts days[3..5]
+``` 
+
+Check out some of the other things ranges can do:
+
+In pry run:
+
+$`(1..5).to_a`
+$`(1...5).to_a`
+
+And ridiculously:
+
+$`("a"..."z").to_a`
+
+```ruby
+alphabet = ("a"..."z").to_a
+
+alphabet.each do |letter|
+  puts letter
+end
+```
+
 #### Extra Detail: Dem Blocks Tho!
 
-That `do`/`end` thing you're messing with is called a _block_, and it just runs the code in between, almost like a little function without a name - like anonymous functions in JavaScript or lambdas in Python.
+The code between `do`/`end` is called a _block_. Almost like a little function without a name - think anonymous functions in JavaScript or lambdas in Python.
 
 You'll see blocks all the time, and you'll use `.each` like it's your job. It just loops through each value in your array and assigns a local variable (that you decide) to each object. You come up with what you want it called in the "pipes", aka those tall neighbors surrounding the variable: `|a_variable_of_my_choosing|`.
 
@@ -555,6 +576,7 @@ To see it in action, let's pick something random in the room and try to describe
 > **Note:** just to prove hashes can hold all kinds of great data, let's see how many different data types we can describe our object with!
 
 For example, let's describe a fan in the room.
+
 ```ruby
 fan = {
   type: 'freestanding',
@@ -643,21 +665,3 @@ Given we just learned to do this with arrays, it's okay to be unsurprised.
 fan.delete(:color)
 ```
 
-## Ranges
-
-In pry run:
-
-$`(1..5).to_a`
-$`(1...5).to_a`
-
-And ridiculously:
-
-$`("a"..."z").to_a`
-
-```ruby
-alphabet = ("a"..."z").to_a
-
-alphabet.each do |letter|
-  puts letter
-end
-```
