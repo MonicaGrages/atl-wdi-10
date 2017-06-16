@@ -1,3 +1,70 @@
+## Closing Questions
+
+Please answer the following questions in the spaces provided.
+
+1.  How do you write an `if` statement in Ruby?
+
+  ```ruby
+    # your answer here
+  ```
+
+2.  Please write code that would take the string "007", reverse it,
+    and return the integer `700`.
+
+  ```ruby
+    "007".reverse
+  ```
+
+3.  Please write code that takes the array `[23,56,3,7]`, sorts it,
+    and then reverses that sorted array 'in place'
+    (i.e. modifying the original array, rather than returning a new array).
+
+  ```ruby
+    # your answer here
+  ```
+
+3.  What does an exclamation point at the end of a method name usually signify?
+
+  ```text
+    Your answer here:
+  ```
+
+4.  What does a question mark and the end of a method name usually signify?
+
+  ```text
+    It returns a boolean value
+  ```
+
+5.  How do you define a method in Ruby? Give a simple example.
+
+  ```ruby
+    def
+      puts "Hello World"
+    end
+  ```
+
+6.  How do you create a class in Ruby? Give a simple example.
+
+  ```ruby
+    # your answer here
+  ```
+
+7. Please give an example of how iteration can be performed in Ruby.
+
+  ```ruby
+    # your answer here
+  ```
+
+8.  If I modify a class in Ruby by adding a method, will instances of that class
+    which have already been created be able to call the new method I added?
+    Please explain why.
+
+  ```text
+    Your answer here:
+  ```
+
+
+
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
 # HW : Learn Ruby the Hard Way
@@ -92,65 +159,3 @@ When you run your scripts make sure you're in the correct directory.
 
 * You can watch the rest of the videos [here!](https://www.youtube.com/playlist?list=PLw1xVKFbouelGegt-oL_Eip2GSUhr-a66)
 
-## Closing Questions
-
-Please answer the following questions in the spaces provided.
-
-1.  How do you write an `if` statement in Ruby?
-
-  ```ruby
-    # your answer here
-  ```
-
-2.  Please write code that would take the string "007", reverse it,
-    and return the integer `700`.
-
-  ```ruby
-    # your answer here
-  ```
-
-3.  Please write code that takes the array `[23,56,3,7]`, sorts it,
-    and then reverses that sorted array 'in place'
-    (i.e. modifying the original array, rather than returning a new array).
-
-  ```ruby
-    # your answer here
-  ```
-
-3.  What does an exclamation point at the end of a method name usually signify?
-
-  ```text
-    Your answer here:
-  ```
-
-4.  What does a question mark and the end of a method name usually signify?
-
-  ```text
-    Your answer here:
-  ```
-
-5.  How do you define a method in Ruby? Give a simple example.
-
-  ```ruby
-    # your answer here
-  ```
-
-6.  How do you create a class in Ruby? Give a simple example.
-
-  ```ruby
-    # your answer here
-  ```
-
-7. Please give an example of how iteration can be performed in Ruby.
-
-  ```ruby
-    # your answer here
-  ```
-
-8.  If I modify a class in Ruby by adding a method, will instances of that class
-    which have already been created be able to call the new method I added?
-    Please explain why.
-
-  ```text
-    Your answer here:
-  ```
