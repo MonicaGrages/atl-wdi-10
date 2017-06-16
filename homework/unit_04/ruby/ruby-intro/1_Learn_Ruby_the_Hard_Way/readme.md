@@ -6,7 +6,7 @@ Please answer the following questions in the spaces provided.
 
   ```ruby
     if number == 3
-      puts( "It's a 3!" )
+      puts "It's a 3!"
     end
   ```
 
@@ -22,14 +22,14 @@ Please answer the following questions in the spaces provided.
     (i.e. modifying the original array, rather than returning a new array).
 
   ```ruby
-    # your answer here
+    [23,56,3,7].sort!.reverse!
   ```
 
 3.  What does an exclamation point at the end of a method name usually signify?
 
   ```text
-    They will modify the value in memory they are being called on.
-    You are mutating the thing.
+    Will modify the value in memory the method is being called on.
+    You are mutating the thing and reassigning the value of it.
   ```
 
 4.  What does a question mark and the end of a method name usually signify?
