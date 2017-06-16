@@ -5,7 +5,7 @@ Please answer the following questions in the spaces provided.
 1.  How do you write an `if` statement in Ruby?
 
   ```ruby
-    if( number == 3 ) # with parens
+    if number == 3
       puts( "It's a 3!" )
     end
   ```
@@ -28,7 +28,7 @@ Please answer the following questions in the spaces provided.
 3.  What does an exclamation point at the end of a method name usually signify?
 
   ```text
-    Your answer here:
+    They will modify the value in memory they are being called on.
   ```
 
 4.  What does a question mark and the end of a method name usually signify?
