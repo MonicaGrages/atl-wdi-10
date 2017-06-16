@@ -29,6 +29,7 @@ Please answer the following questions in the spaces provided.
 
   ```text
     They will modify the value in memory they are being called on.
+    You are mutating the thing.
   ```
 
 4.  What does a question mark and the end of a method name usually signify?
