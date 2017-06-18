@@ -74,6 +74,44 @@
 # favorite_movie[:movie] = "Forgetting Sarah Marshall"
 # puts favorite_movie
 
+#CHALLENGE 8
+# first_range = 1..10
+# first_range.to_a
+# puts first_range
+# puts first_range.to_a
+# second_range = 1...1000
+# second_range = second_range.to_a
+# first_range.each do |num|
+#   num = "some string"
+#   puts num
+# end
+# first_range.to_a.each do |num|
+#   num = "other string"
+#   puts num
+# end
+# x = 0
+# while x < 50
+#   puts second_range[x]
+#   x += 1
+# end
+# new_array = []
+# I couldn't figure out how to do this next part with just .each so I used some info from this stack overflow question
+# https://stackoverflow.com/questions/4689186/how-do-you-select-every-nth-item-in-an-array
+# new_array = first_range.drop(1).each_slice(2).map(&:first)
+# new_array.map! do|num|
+#   num = num * 2
+# end
+# first_range.map do |num|
+#   if num.even?
+#     num = num.to_s
+#   else
+#     num = num
+#   end
+# end
+
+
+
+
 
 
 
