@@ -55,7 +55,11 @@ Please answer the following questions in the spaces provided.
 7. Please give an example of how iteration can be performed in Ruby.
 
   ```ruby
-    # your answer here
+   .each
+   .map
+   .times
+   until
+   while
   ```
 
 8.  If I modify a class in Ruby by adding a method, will instances of that class
