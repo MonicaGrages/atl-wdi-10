@@ -48,6 +48,16 @@
 # activity_user_typed = gets.chomp
 # puts "#{name_user_typed} likes to #{activity_user_typed}"
 
+#CHALLENGE 6
+# my_first_array = []
+# my_first_array = ["hello", "hi", "what's up?", "hey", "another string", 4, 9, 7, 0]
+# puts my_first_array.last
+# puts my_first_array.first
+# my_first_array[1] = "Joe"
+# my_first_array[2] = 3
+# puts my_first_array.to_s
+# my_first_array.push(true)
+# puts my_first_array[3].class
 
 
 
