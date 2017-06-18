@@ -59,6 +59,20 @@
 # my_first_array.push(true)
 # puts my_first_array[3].class
 
+#CHALLENGE 7
+# my_favorite_animals = {
+#   "Edgar": "Donkey",
+#   "Fisher": "Dog",
+#   "Arthur": "Cat",
+#   "Captain": "Bird",
+#   "Georgie": "Three legged dog"
+# }
+# puts my_favorite_animals
+# my_favorite_animals[:Edgar] = "Bear"
+# puts my_favorite_animals
+# favorite_movie = {}
+# favorite_movie[:movie] = "Forgetting Sarah Marshall"
+# puts favorite_movie
 
 
 
