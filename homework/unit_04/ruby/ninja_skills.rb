@@ -109,6 +109,21 @@
 #   end
 # end
 
+CHALLENGE 9
+
+#PRIME NUMBERS CHALLENGE
+# def check_prime number_to_check
+#   if Math.sqrt(number_to_check) % 1 == 0.0
+#     puts true
+#     return true
+#   else
+#     puts false
+#     return false
+#   end
+# end
+# check_prime 9
+# check_prime 10
+
 
 
 
