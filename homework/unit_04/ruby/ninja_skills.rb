@@ -110,21 +110,23 @@
 # end
 
 # CHALLENGE 9
-sum_count = 0
-current_number = 1
-while current_number < 1000 do
-  if current_number % 3 == 0 || current_number % 5 == 0
-    sum_count += current_number
-  end
-  current_number += 1
-end
-puts sum_count
-
-
+# sum_count = 0
+# current_number = 1
+# while current_number < 1000 do
+#   if current_number % 3 == 0 || current_number % 5 == 0
+#     sum_count += current_number
+#   end
+#   current_number += 1
+# end
+# puts sum_count
+# puts current_number
 
 #PRIME NUMBERS CHALLENGE
+# This was confusing
+# https://stackoverflow.com/questions/11762043/how-can-i-test-if-a-value-is-a-prime-number-in-ruby-both-the-easy-and-the-hard
+# require 'prime'
 # def check_prime number_to_check
-#   if Math.sqrt(number_to_check) % 1 == 0.0
+#   if Prime.prime?(number_to_check)
 #     puts true
 #     return true
 #   else
@@ -133,7 +135,15 @@ puts sum_count
 #   end
 # end
 # check_prime 9
-# check_prime 10
+
+# From Ruby Prime docs
+# def get_primes max_number
+#   Prime.each(max_number) do |prime|
+#     puts prime
+#   end
+# end
+# get_primes 100
+
 
 
 
