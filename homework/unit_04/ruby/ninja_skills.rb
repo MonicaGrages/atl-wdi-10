@@ -109,7 +109,18 @@
 #   end
 # end
 
-CHALLENGE 9
+# CHALLENGE 9
+sum_count = 0
+current_number = 1
+while current_number < 1000 do
+  if current_number % 3 == 0 || current_number % 5 == 0
+    sum_count += current_number
+  end
+  current_number += 1
+end
+puts sum_count
+
+
 
 #PRIME NUMBERS CHALLENGE
 # def check_prime number_to_check
