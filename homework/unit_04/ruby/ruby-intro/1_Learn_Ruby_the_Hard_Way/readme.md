@@ -49,7 +49,9 @@ Please answer the following questions in the spaces provided.
 6.  How do you create a class in Ruby? Give a simple example.
 
   ```ruby
-    # your answer here
+    class Name
+     #some code describing the class behavior
+    end
   ```
 
 7. Please give an example of how iteration can be performed in Ruby.
@@ -67,7 +69,7 @@ Please answer the following questions in the spaces provided.
     Please explain why.
 
   ```text
-    Your answer here:
+    I looked for this answer but I could not find it. My guess is that you would not be able to call new methods on a previously created instance of a class.
   ```
 
 
