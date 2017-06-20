@@ -144,6 +144,24 @@
 # end
 # get_primes 100
 
+# def reverseVowelsOfString(s)
+#     array_of_vowels = []
+#     array_of_vowel_indices = []
+#     s.each_char do |letter|
+#         if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
+#             array_of_vowels.push letter
+#             array_of_vowel_indices.push s.index letter
+#         end
+#     end
+#     array_of_vowel_indices.reverse!
+#     array_of_vowel_indices.each do  |index_where_vowel_is|
+#         s[index_where_vowel_is] = array_of_vowels[array_of_vowel_indices.index(index_where_vowel_is)]
+#       end
+#     puts s
+#     return s
+# end
+# reverseVowelsOfString "Hello World"
+
 
 
 
