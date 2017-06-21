@@ -3,6 +3,9 @@
 
 -- Find all fields (book and author related) for all books written by George R.R. Martin.
 SELECT * FROM books JOIN authors ON authors.id=books.author_id WHERE authors.name = 'George R.R. Martin';
+Book.joins("JOIN authors ON books.author_id = authors.id AND authors.name = 'George R.R. Martin'")
+or
+Book.where('authors.name': 'George R.R. Martin').joins("JOIN authors ON books.author_id = authors.id")
 
 -- Find all fields (book and author related) for all books written by Milan Kundera.
 SELECT * FROM books JOIN authors ON authors.id=books.author_id WHERE authors.name = 'Milan Kundera';
