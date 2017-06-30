@@ -59,13 +59,13 @@ The **client** is a customer eating in the restaurant, the **server** is the wai
     - mailers - for sending emails
     - assets -> where we put static files
 - **bin** 
-    - bundle, rails, rake our binary files
+    - bundle, rails, our binary files
 - **config**
     - Application configuration, set config files for routes, db and environments
 - **db**
     - store code related to db - Migrations go here!
 - **gemfile/gemfile lock**
-    - Gems are like NPMs. You have to put any gem you want to use in your Gemfile. You have to run bundle anytime you change your Gemfile. Your rails server needs to be restarted after any changes to your Gemfile.
+    - Gems are like NPM packagess. You have to put any gem you want to use in your Gemfile. You have to run bundle anytime you change your Gemfile. Your rails server needs to be restarted after any changes to your Gemfile.
 - **doc** - Documentation for the application
 - **lib** - Library modules
 - **log** - Application log files
